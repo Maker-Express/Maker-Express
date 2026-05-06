@@ -17,13 +17,18 @@ on:
 
 jobs:
   sync:
-    name: Sync data to public repo
+    name: Export JSON → Markdown and sync to public repo
     runs-on: ubuntu-latest
     env:
-      PUBLIC_REPO: makerhub-india/data
+      PUBLIC_REPO: makerhub-india/data   # ← update if org/repo name changes
 
     steps:
       - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
 
       - name: Clone public repo
         env:
@@ -31,10 +36,14 @@ jobs:
         run: |
           git clone "https://x-access-token:${PAT}@github.com/${PUBLIC_REPO}.git" /tmp/public-repo
 
-      - name: Copy data files
+      - name: Export JSON → Markdown files
         run: |
-          cp data/seeds/resources.json /tmp/public-repo/data/resources.json
-          cp data/seeds/funding.json   /tmp/public-repo/data/funding.json
+          # Point export script at the cloned public repo
+          python3 scripts/export_to_md.py
+
+          # Copy generated MD files to public repo
+          cp -r public-repo/resources/. /tmp/public-repo/resources/
+          cp -r public-repo/funding/.   /tmp/public-repo/funding/
 
       - name: Commit and push
         env:
@@ -43,11 +52,20 @@ jobs:
           cd /tmp/public-repo
           git config user.name  "MakerHub Bot"
           git config user.email "bot@makerhub.in"
-          git add data/resources.json data/funding.json
+          git add resources/ funding/
           if git diff --staged --quiet; then
             echo "No changes to sync."
             exit 0
           fi
-          COUNT=$(python3 -c "import json; print(len(json.load(open('data/resources.json'))))")
-          git commit -m "sync: update dataset (${COUNT} resources)"
+          COUNTS=$(python3 -c "
+          import re
+          from pathlib import Path
+          total = sum(
+              len(re.findall(r'^### ', f.read_text(), re.MULTILINE))
+              for f in Path('resources').glob('*.md')
+              if f.name != 'README.md'
+          )
+          print(total)
+          ")
+          git commit -m "sync: export dataset (${COUNTS} resources)"
           git push

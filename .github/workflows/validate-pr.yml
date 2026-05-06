@@ -1,46 +1,54 @@
-name: Validate Resources
+name: Validate PR
 
 on:
   pull_request:
     paths:
-      - 'data/resources.json'
-      - 'data/funding.json'
+      - "resources/**"
+      - "funding/**"
 
 jobs:
   validate:
-    name: Validate data/resources.json
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.12'
+          python-version: "3.12"
 
-      - name: Validate schema
-        run: python3 scripts/validate.py data/resources.json
+      - name: Validate Markdown files
+        run: python3 scripts/validate_md.py resources/ funding/
 
-      - name: Check slug uniqueness
+      - name: Check for duplicate slugs across all files
         run: |
-          python3 -c "
-          import json, collections, sys
-          data = json.load(open('data/resources.json'))
-          slugs = [r.get('slug', '') for r in data if isinstance(r, dict)]
-          dupes = [s for s, n in collections.Counter(slugs).items() if n > 1]
+          python3 - << 'EOF'
+          import re, sys
+          from pathlib import Path
+          SLUG_CODE = re.compile(r"\|\s*\*\*Slug\*\*\s*\|\s*`([^`]+)`")
+          slugs = {}
+          dupes = []
+          for f in sorted(Path("resources").glob("*.md")):
+              if f.name == "README.md":
+                  continue
+              for m in SLUG_CODE.finditer(f.read_text()):
+                  slug = m.group(1).strip()
+                  if slug in slugs:
+                      dupes.append(f"  '{slug}' in {f.name} (also in {slugs[slug]})")
+                  else:
+                      slugs[slug] = f.name
           if dupes:
-              print('Duplicate slugs found:', dupes)
+              print("Duplicate slugs found across files:")
+              print("\n".join(dupes))
               sys.exit(1)
-          print(f'OK — {len(slugs)} unique slugs')
-          "
+          else:
+              print(f"OK — {len(slugs)} unique slugs")
+          EOF
 
-      - name: Report change count
+      - name: Count changes
+        env:
+          BASE_REF: ${{ github.base_ref }}
         run: |
-          BASE_REF="${{ github.base_ref }}"
-          BASE_SHA=$(git merge-base "origin/${BASE_REF}" HEAD)
-          BEFORE=$(git show "${BASE_SHA}:data/resources.json" 2>/dev/null | python3 -c "import json,sys; d=json.load(sys.stdin); print(len(d))" || echo "0")
-          AFTER=$(python3 -c "import json; print(len(json.load(open('data/resources.json'))))")
-          echo "Resources: ${BEFORE} → ${AFTER} (net change: $((AFTER - BEFORE)))"
+          ADDED=$(git diff --diff-filter=A --name-only "origin/${BASE_REF}...HEAD" -- 'resources/*.md' 'funding/*.md' | wc -l | tr -d ' ')
+          MODIFIED=$(git diff --diff-filter=M --name-only "origin/${BASE_REF}...HEAD" -- 'resources/*.md' 'funding/*.md' | wc -l | tr -d ' ')
+          echo "Files added: ${ADDED}, modified: ${MODIFIED}"
