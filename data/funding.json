@@ -1,0 +1,551 @@
+[
+  {
+    "id": "spc-india",
+    "name": "South Park Commons India",
+    "type": "dilutive",
+    "amount": "$40M Fund",
+    "dilution": "SAFE / Equity",
+    "eligibility": "India (Bengaluru based)",
+    "description": "Pre-ideation to early-stage founder support from South Park Commons' $40M India Fund. Partnership with Binny Bansal (Flipkart co-founder). Focus on founders at the -1 to 0 phase. Global network with founders from Stanford, MIT, and industry leaders.",
+    "url": "https://www.southparkcommons.com/apply/",
+    "deadline": "Rolling",
+    "focus": [
+      "Hardware",
+      "Deep Tech",
+      "AI",
+      "All sectors"
+    ],
+    "region": "India",
+    "tiers": [
+      "Pre-ideation",
+      "Ideation",
+      "Early-stage"
+    ],
+    "featured": true,
+    "region_highlight": "Bengaluru"
+  },
+  {
+    "id": "hax",
+    "name": "HAX (SOSV)",
+    "type": "dilutive",
+    "amount": "$250K\u2013$550K",
+    "dilution": "SAFE",
+    "eligibility": "Worldwide (Pune office)",
+    "description": "Most comprehensive hardware development program. 6-month residency with access to mechanical, chemical, and electronics experts. Global network of 440+ portfolio companies.",
+    "url": "https://hax.co",
+    "deadline": "Rolling",
+    "focus": [
+      "Hardware",
+      "Deep Tech"
+    ],
+    "region": "Global",
+    "tiers": [
+      "Pre-seed",
+      "Seed"
+    ]
+  },
+  {
+    "id": "yc",
+    "name": "Y Combinator",
+    "type": "dilutive",
+    "amount": "$500K",
+    "dilution": "7% + SAFE",
+    "eligibility": "Worldwide",
+    "description": "Leading startup accelerator. Standard deal: $125K for 7% equity + $375K MFN SAFE. Unparalleled Demo Day visibility.",
+    "url": "https://www.ycombinator.com",
+    "deadline": "May 4, 2026",
+    "focus": [
+      "Hardware",
+      "AI",
+      "Deep Tech"
+    ],
+    "region": "Global",
+    "tiers": [
+      "Pre-seed",
+      "Seed"
+    ]
+  },
+  {
+    "id": "techstars",
+    "name": "Techstars",
+    "type": "dilutive",
+    "amount": "$220K",
+    "dilution": "6\u20138%",
+    "eligibility": "Worldwide",
+    "description": "Decentralized mentor-driven model with 50+ programs worldwide. 'Mentor Madness' connects founders with 100+ mentors in first month.",
+    "url": "https://www.techstars.com",
+    "deadline": "Varies",
+    "focus": [
+      "Hardware",
+      "IoT",
+      "HealthTech"
+    ],
+    "region": "Global",
+    "tiers": [
+      "Seed",
+      "Series A"
+    ]
+  },
+  {
+    "id": "brinc",
+    "name": "Brinc India",
+    "type": "dilutive",
+    "amount": "\u20b940L+",
+    "dilution": "Varies",
+    "eligibility": "India-focused",
+    "description": "4-month program combining online education with practical manufacturing support. Tracks for AgriTech, HealthTech, FoodTech.",
+    "url": "https://www.brinc.io",
+    "deadline": "Rolling",
+    "focus": [
+      "AgriTech",
+      "HealthTech",
+      "FoodTech"
+    ],
+    "region": "India",
+    "tiers": [
+      "Early-stage",
+      "Growth"
+    ]
+  },
+  {
+    "id": "cdl",
+    "name": "Creative Destruction Lab (CDL)",
+    "type": "non-dilutive",
+    "amount": "Mentorship only",
+    "dilution": "None",
+    "eligibility": "Deep-tech founders worldwide",
+    "description": "Non-dilutive mentorship model. Objective-setting process coached by world-renowned scientists. No equity taken, no fees charged.",
+    "url": "https://www.creativedestructionlab.com",
+    "deadline": "Sept 2025",
+    "focus": [
+      "Deep Tech",
+      "Robotics",
+      "Advanced Materials"
+    ],
+    "region": "Global",
+    "tiers": [
+      "Early-stage",
+      "Growth"
+    ]
+  },
+  {
+    "id": "nidhi-prayas",
+    "name": "NIDHI-PRAYAS (India)",
+    "type": "non-dilutive",
+    "amount": "\u20b910 Lakhs",
+    "dilution": "None (Grant)",
+    "eligibility": "India only",
+    "description": "Department of Science & Technology (DST) program. Non-repayable grant for product development over 18 months. Bridges 'valley of death' between POC and prototype.",
+    "url": "https://nidhi.dst.gov.in",
+    "deadline": "Varies by center",
+    "focus": [
+      "Hardware",
+      "Tech Startups"
+    ],
+    "region": "India",
+    "tiers": [
+      "Prototype",
+      "Product"
+    ]
+  },
+  {
+    "id": "birac-big",
+    "name": "BIRAC BIG (India)",
+    "type": "non-dilutive",
+    "amount": "\u20b950 Lakhs",
+    "dilution": "None (Grant)",
+    "eligibility": "India only",
+    "description": "Biotechnology Industry Research Assistance Council grant. For biotech, med-tech, and diagnostic hardware. Supports innovation in healthcare technologies.",
+    "url": "https://www.birac.nic.in",
+    "deadline": "Jan, July",
+    "focus": [
+      "BioTech",
+      "MedTech",
+      "Healthcare"
+    ],
+    "region": "India",
+    "tiers": [
+      "Product",
+      "Scale-up"
+    ]
+  },
+  {
+    "id": "meity-tide",
+    "name": "TIDE 2.0 (India)",
+    "type": "non-dilutive",
+    "amount": "\u20b97 Lakhs",
+    "dilution": "None (Grant)",
+    "eligibility": "India only",
+    "description": "Ministry of Electronics & IT program. Technology Incubation and Development of Entrepreneurs. Supports ICT-enabled hardware in agritech, health-tech.",
+    "url": "https://www.meity.gov.in",
+    "deadline": "Varies by center",
+    "focus": [
+      "AgriTech",
+      "HealthTech",
+      "IoT"
+    ],
+    "region": "India",
+    "tiers": [
+      "Prototype",
+      "Product"
+    ]
+  },
+  {
+    "id": "usistef",
+    "name": "USISTEF (India\u2013USA)",
+    "type": "non-dilutive",
+    "amount": "Up to $500K",
+    "dilution": "None (Grant)",
+    "eligibility": "Joint India\u2013USA partnerships required",
+    "description": "US\u2013India Science & Technology Endowment Fund. Bilateral R&D for commercialization. Focus on Critical & Emerging Technology (iCET), quantum, AI.",
+    "url": "https://www.iusstf.org",
+    "deadline": "Rolling",
+    "focus": [
+      "Quantum",
+      "AI",
+      "Critical Tech"
+    ],
+    "region": "India\u2013USA",
+    "tiers": [
+      "Product",
+      "Scale-up"
+    ]
+  },
+  {
+    "id": "igstc",
+    "name": "IGSTC 2+2 Call (India\u2013Germany)",
+    "type": "non-dilutive",
+    "amount": "\u20b93.5 Cr (India) / \u20ac500K (Germany)",
+    "dilution": "None (Grant)",
+    "eligibility": "Joint India\u2013Germany 2+2 partnerships",
+    "description": "Indo-German Science & Technology Centre. Supports market-ready solutions in mHealth, telemedicine, water resource management.",
+    "url": "https://www.igstc.org",
+    "deadline": "May 2026",
+    "focus": [
+      "MHealth",
+      "Telemedicine",
+      "Water Tech"
+    ],
+    "region": "India\u2013Germany",
+    "tiers": [
+      "Product",
+      "Scale-up"
+    ]
+  },
+  {
+    "id": "nlnet",
+    "name": "NLnet / NGI0 (Europe)",
+    "type": "non-dilutive",
+    "amount": "\u20ac5K\u2013\u20ac50K (up to \u20ac200K)",
+    "dilution": "None (Grant)",
+    "eligibility": "Worldwide (must be open source)",
+    "description": "European Commission funding for open-source hardware. Supports decentralized communications, secure firmware, accessibility hardware. All outputs must be FOSS.",
+    "url": "https://nlnet.nl/funding.html",
+    "deadline": "1st of every even month",
+    "focus": [
+      "Open Hardware",
+      "Security",
+      "Accessibility"
+    ],
+    "region": "Europe (global applicants)",
+    "tiers": [
+      "Prototype",
+      "Product"
+    ]
+  },
+  {
+    "id": "mozilla-tech-fund",
+    "name": "Mozilla Technology Fund",
+    "type": "non-dilutive",
+    "amount": "$50K + 1-year incubation",
+    "dilution": "None (Grant)",
+    "eligibility": "Worldwide",
+    "description": "Democracy \u00d7 AI cohort. For hardware that strengthens civic knowledge or institutional transparency. Requires working prototype in use.",
+    "url": "https://foundation.mozilla.org",
+    "deadline": "March 16, 2026",
+    "focus": [
+      "Civic Tech",
+      "AI",
+      "Transparency"
+    ],
+    "region": "Global",
+    "tiers": [
+      "Product",
+      "Scale-up"
+    ]
+  },
+  {
+    "id": "spark-sine",
+    "name": "SPARK / SINE (IIT Bombay)",
+    "type": "non-dilutive",
+    "amount": "$10K\u2013$100K",
+    "dilution": "None (Grant)",
+    "eligibility": "India only",
+    "description": "Scale-up grant for technology startups from IIT Bombay's SINE incubator. Supports early-stage tech ventures to scale.",
+    "url": "https://sineiitb.org",
+    "deadline": "Jan 15, 2026",
+    "focus": [
+      "Tech Startups",
+      "Scale-up"
+    ],
+    "region": "India",
+    "tiers": [
+      "Scale-up"
+    ]
+  },
+  {
+    "id": "elemental-excelerator",
+    "name": "Elemental Excelerator",
+    "type": "non-dilutive",
+    "amount": "$350K\u2013$1M",
+    "dilution": "None (Grant)",
+    "eligibility": "High-traction climate tech",
+    "description": "Non-dilutive climate tech funding. Supports hardware for clean energy, climate adaptation, sustainable materials.",
+    "url": "https://www.elementalexcelerator.com",
+    "deadline": "Rolling",
+    "focus": [
+      "Climate Tech",
+      "Energy",
+      "Sustainability"
+    ],
+    "region": "Global",
+    "tiers": [
+      "Product",
+      "Scale-up"
+    ]
+  },
+  {
+    "id": "hackaday-prize",
+    "name": "Hackaday Prize",
+    "type": "non-dilutive",
+    "amount": "Cash prizes up to $50K",
+    "dilution": "None (Prize)",
+    "eligibility": "Worldwide",
+    "description": "Annual open hardware competition for social impact projects. Multiple prize categories and stages.",
+    "url": "https://prize.hackaday.com",
+    "deadline": "Annual",
+    "focus": [
+      "Open Hardware",
+      "Social Impact"
+    ],
+    "region": "Global",
+    "tiers": [
+      "Any stage"
+    ]
+  },
+  {
+    "id": "antler-india",
+    "name": "Antler India",
+    "type": "dilutive",
+    "amount": "\u20b94 Cr (~$470K)",
+    "dilution": "11%",
+    "eligibility": "India (Bangalore)",
+    "description": "3-week residency in Bangalore with access to $1M in AI perks. Strong network of corporate partners and investors.",
+    "url": "https://www.antler.co/india",
+    "deadline": "Feb 19, 2026",
+    "focus": [
+      "Startups",
+      "Deep Tech"
+    ],
+    "region": "India",
+    "tiers": [
+      "Pre-seed",
+      "Seed"
+    ]
+  },
+  {
+    "id": "iterate-vc",
+    "name": "Iterate.vc",
+    "type": "dilutive",
+    "amount": "$150K\u2013$500K",
+    "dilution": "Varies",
+    "eligibility": "Southeast Asia + India",
+    "description": "Focused on Southeast Asia and India. Remote program for hardware and deep-tech startups.",
+    "url": "https://iterate.vc",
+    "deadline": "July 2026",
+    "focus": [
+      "Hardware",
+      "Deep Tech"
+    ],
+    "region": "India + SE Asia",
+    "tiers": [
+      "Seed",
+      "Series A"
+    ]
+  },
+  {
+    "id": "all-in-capital",
+    "name": "All In Capital",
+    "type": "dilutive",
+    "amount": "Pre-seed / Seed",
+    "dilution": "Equity / SAFE",
+    "eligibility": "India-based startups",
+    "description": "All In Capital is an India-focused early-stage fund investing in startups across deep tech, hardware, and consumer sectors. Backs founders from pre-seed through Series A. Part of the broader Indian startup ecosystem with ties to Bengaluru and Delhi NCR founder communities.",
+    "url": "https://allin.capital",
+    "deadline": "Rolling",
+    "focus": [
+      "Hardware",
+      "Deep Tech",
+      "Consumer",
+      "B2B"
+    ],
+    "region": "India",
+    "tiers": [
+      "Pre-seed",
+      "Seed"
+    ],
+    "featured": true,
+    "region_highlight": "India"
+  },
+  {
+    "id": "speciale-invest",
+    "name": "Speciale Invest",
+    "type": "dilutive",
+    "amount": "\u20b91\u20135 Cr",
+    "dilution": "Equity",
+    "eligibility": "India deep-tech startups",
+    "description": "Speciale Invest is a Bengaluru-based deep-tech focused VC backing semiconductor, space, defence, and advanced manufacturing startups. One of few Indian VCs with explicit hardware manufacturing and deep tech thesis.",
+    "url": "https://www.specialeinvest.com",
+    "deadline": "Rolling",
+    "focus": [
+      "Hardware",
+      "Semiconductors",
+      "Space",
+      "Defence",
+      "Advanced Manufacturing"
+    ],
+    "region": "India",
+    "tiers": [
+      "Pre-seed",
+      "Seed"
+    ],
+    "featured": true,
+    "region_highlight": "Bengaluru"
+  },
+  {
+    "id": "ideaspring-capital",
+    "name": "IdeaSpring Capital",
+    "type": "dilutive",
+    "amount": "\u20b91\u20134 Cr",
+    "dilution": "Equity",
+    "eligibility": "India hardware & deep-tech startups",
+    "description": "Bengaluru-based seed fund focused on hardware, robotics, IoT, and connected devices. One of India's most active hardware-specific investors. Portfolio includes robotics, medical devices, and industrial IoT companies.",
+    "url": "https://ideaspringcapital.com",
+    "deadline": "Rolling",
+    "focus": [
+      "Hardware",
+      "Robotics",
+      "IoT",
+      "Medical Devices",
+      "Industrial Tech"
+    ],
+    "region": "India",
+    "tiers": [
+      "Seed",
+      "Series A"
+    ],
+    "featured": true,
+    "region_highlight": "Bengaluru"
+  },
+  {
+    "id": "gusec-ahmedabad",
+    "name": "GUSEC (Gujarat Uni Startup & Entrepreneurship Council)",
+    "type": "non-dilutive",
+    "amount": "\u20b95L\u2013\u20b950L",
+    "dilution": "None",
+    "eligibility": "Gujarat / India startups and student founders",
+    "description": "GUSEC is one of India's top ranked university incubators based in Ahmedabad. Provides grant funding, infrastructure, mentorship, and government scheme access (SSIP, NIDHI-PRAYAS) for hardware and tech startups. Particularly active for IoT and manufacturing.",
+    "url": "https://gusec.edu.in",
+    "deadline": "Rolling",
+    "focus": [
+      "Hardware",
+      "IoT",
+      "Manufacturing",
+      "AgriTech",
+      "CleanTech"
+    ],
+    "region": "India",
+    "tiers": [
+      "Idea",
+      "Prototype",
+      "Early-stage"
+    ],
+    "featured": false,
+    "region_highlight": "Ahmedabad"
+  },
+  {
+    "id": "t-hub-hyderabad",
+    "name": "T-Hub \u2014 Hyderabad",
+    "type": "non-dilutive",
+    "amount": "\u20b95L\u2013\u20b92Cr",
+    "dilution": "None (equity in some programmes)",
+    "eligibility": "India startups, global with India ops",
+    "description": "T-Hub is India's largest startup incubator based in Hyderabad. Government-backed but operates like a private accelerator. Has dedicated hardware and deep-tech programmes. Provides grants, lab access, corporate partnerships, and regulatory support.",
+    "url": "https://t-hub.co",
+    "deadline": "Multiple cohorts/year",
+    "focus": [
+      "Hardware",
+      "Deep Tech",
+      "MedTech",
+      "CleanTech",
+      "Manufacturing"
+    ],
+    "region": "India",
+    "tiers": [
+      "Prototype",
+      "Early-stage",
+      "Growth"
+    ],
+    "featured": true,
+    "region_highlight": "Hyderabad"
+  },
+  {
+    "id": "sid-iitb",
+    "name": "SID / SINE \u2014 IIT Bombay",
+    "type": "non-dilutive",
+    "amount": "\u20b910L\u2013\u20b91Cr",
+    "dilution": "None (optional equity for larger grants)",
+    "eligibility": "IIT Bombay faculty, students, alumni; India startups",
+    "description": "Society for Innovation and Entrepreneurship (SINE) at IIT Bombay incubates deep-tech startups with lab access, prototype funding, and connection to IIT Bombay research. Strong in hardware, medical devices, energy, and manufacturing.",
+    "url": "https://www.sineiitb.org",
+    "deadline": "Rolling",
+    "focus": [
+      "Hardware",
+      "Medical Devices",
+      "Energy",
+      "Advanced Manufacturing"
+    ],
+    "region": "India",
+    "tiers": [
+      "Idea",
+      "Prototype",
+      "Seed"
+    ],
+    "featured": false,
+    "region_highlight": "Mumbai"
+  },
+  {
+    "id": "nain-nasscom",
+    "name": "NASSCOM CoE \u2014 IoT & AI",
+    "type": "non-dilutive",
+    "amount": "Lab access + \u20b95L\u2013\u20b925L",
+    "dilution": "None",
+    "eligibility": "India hardware and IoT startups",
+    "description": "NASSCOM Centre of Excellence for IoT and AI provides hardware startups with lab access, corporate pilot opportunities, grants, and mentorship. Has facilities in Bengaluru and Gurugram. Well-connected to enterprise hardware buyers.",
+    "url": "https://nasscom.in/centres-of-excellence",
+    "deadline": "Rolling cohorts",
+    "focus": [
+      "IoT",
+      "AI Hardware",
+      "Smart Manufacturing",
+      "Connected Devices"
+    ],
+    "region": "India",
+    "tiers": [
+      "Prototype",
+      "Early-stage"
+    ],
+    "featured": false,
+    "region_highlight": "Bengaluru"
+  }
+]

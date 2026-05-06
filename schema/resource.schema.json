@@ -1,0 +1,140 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/makerhub-india/data/blob/main/schema/resource.schema.json",
+  "title": "MakerHub India Resource",
+  "description": "A single hardware ecosystem resource in the MakerHub India directory.",
+  "type": "object",
+  "required": ["slug", "name", "type", "city", "state", "description_short", "categories"],
+  "additionalProperties": true,
+  "properties": {
+    "slug": {
+      "type": "string",
+      "description": "URL-safe unique identifier. Lowercase alphanumeric + hyphens, 3-60 chars.",
+      "pattern": "^[a-z0-9][a-z0-9-]{1,58}[a-z0-9]$",
+      "examples": ["iit-bombay-ncair", "fab-lab-pune", "stqc-bangalore"]
+    },
+    "name": {
+      "type": "string",
+      "description": "Official name of the resource.",
+      "minLength": 2,
+      "maxLength": 200
+    },
+    "name_hindi": {
+      "type": ["string", "null"],
+      "description": "Name in Devanagari script (optional)."
+    },
+    "type": {
+      "type": "string",
+      "description": "Primary resource type.",
+      "enum": [
+        "testing-lab", "pcb-fab", "ems", "component-supplier", "makerspace",
+        "govt-lab", "research-lab", "tinkering-lab", "consultant",
+        "certification-body", "accelerator", "manufacturer", "tool-service",
+        "3d-printing", "logistics", "investor", "grant", "co-working",
+        "prototyping-lab", "online-tool", "online-store", "distributor",
+        "event", "job-board", "community", "laser-scanning", "other"
+      ]
+    },
+    "city": {
+      "type": "string",
+      "description": "Primary city name in English.",
+      "minLength": 2,
+      "maxLength": 100
+    },
+    "state": {
+      "type": "string",
+      "description": "Indian state name in English.",
+      "minLength": 2,
+      "maxLength": 100
+    },
+    "description_short": {
+      "type": "string",
+      "description": "1-2 sentence description, max 400 characters.",
+      "minLength": 10,
+      "maxLength": 400
+    },
+    "categories": {
+      "type": "array",
+      "description": "One or more capability categories.",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "enum": [
+          "electronics", "mechanical", "biotech", "materials", "software",
+          "robotics", "aerospace", "energy", "chemistry", "textiles",
+          "agriculture", "prototyping", "defense", "automotive", "medical", "iot"
+        ]
+      }
+    },
+    "tags": {
+      "type": "array",
+      "description": "Freeform search tags.",
+      "items": { "type": "string" }
+    },
+    "access_level": {
+      "type": "integer",
+      "description": "0=open public, 1=easy access, 2=institutional, 3=restricted, 4=closed",
+      "minimum": 0,
+      "maximum": 4,
+      "default": 1
+    },
+    "website": {
+      "type": ["string", "null"],
+      "description": "Primary website URL.",
+      "format": "uri"
+    },
+    "email": {
+      "type": ["string", "null"],
+      "description": "Contact email address.",
+      "format": "email"
+    },
+    "phone": {
+      "type": ["string", "null"],
+      "description": "Phone number in international format."
+    },
+    "address": {
+      "type": ["string", "null"],
+      "description": "Street address."
+    },
+    "equipment": {
+      "type": "array",
+      "description": "List of major equipment or capabilities.",
+      "items": { "type": "string" }
+    },
+    "certifications": {
+      "type": "array",
+      "description": "Certifications or accreditations (e.g. NABL, ISO 17025).",
+      "items": { "type": "string" }
+    },
+    "price_tier": {
+      "type": ["integer", "null"],
+      "description": "1=free/subsidised, 2=affordable, 3=market rate, 4=premium",
+      "minimum": 1,
+      "maximum": 4
+    },
+    "walk_in": {
+      "type": ["boolean", "null"],
+      "description": "True if walk-in visits are accepted without appointment."
+    },
+    "verified": {
+      "type": ["boolean", "null"],
+      "description": "True if a maintainer has verified this entry is accurate."
+    },
+    "featured": {
+      "type": ["boolean", "null"],
+      "description": "True if this resource should be featured on the homepage."
+    },
+    "latitude": {
+      "type": ["number", "null"],
+      "description": "WGS84 latitude.",
+      "minimum": 6.0,
+      "maximum": 38.0
+    },
+    "longitude": {
+      "type": ["number", "null"],
+      "description": "WGS84 longitude.",
+      "minimum": 68.0,
+      "maximum": 98.0
+    }
+  }
+}

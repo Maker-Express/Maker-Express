@@ -1,0 +1,46 @@
+name: Validate Resources
+
+on:
+  pull_request:
+    paths:
+      - 'data/resources.json'
+      - 'data/funding.json'
+
+jobs:
+  validate:
+    name: Validate data/resources.json
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Validate schema
+        run: python3 scripts/validate.py data/resources.json
+
+      - name: Check slug uniqueness
+        run: |
+          python3 -c "
+          import json, collections, sys
+          data = json.load(open('data/resources.json'))
+          slugs = [r.get('slug', '') for r in data if isinstance(r, dict)]
+          dupes = [s for s, n in collections.Counter(slugs).items() if n > 1]
+          if dupes:
+              print('Duplicate slugs found:', dupes)
+              sys.exit(1)
+          print(f'OK — {len(slugs)} unique slugs')
+          "
+
+      - name: Report change count
+        run: |
+          BASE_REF="${{ github.base_ref }}"
+          BASE_SHA=$(git merge-base "origin/${BASE_REF}" HEAD)
+          BEFORE=$(git show "${BASE_SHA}:data/resources.json" 2>/dev/null | python3 -c "import json,sys; d=json.load(sys.stdin); print(len(d))" || echo "0")
+          AFTER=$(python3 -c "import json; print(len(json.load(open('data/resources.json'))))")
+          echo "Resources: ${BEFORE} → ${AFTER} (net change: $((AFTER - BEFORE)))"

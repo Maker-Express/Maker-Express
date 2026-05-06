@@ -1,0 +1,53 @@
+name: Sync data from private repo
+
+# Runs in the PRIVATE repo — copy this to .github/workflows/sync-public-data.yml
+# in the private monorepo to push resources.json / funding.json to the public repo.
+#
+# Setup:
+#   1. Create a PAT with 'repo' scope for the public repo
+#   2. Add it as secret PUBLIC_REPO_PAT in the PRIVATE repo
+#   3. Set PUBLIC_REPO below to your actual public repo slug
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'data/seeds/resources.json'
+      - 'data/seeds/funding.json'
+
+jobs:
+  sync:
+    name: Sync data to public repo
+    runs-on: ubuntu-latest
+    env:
+      PUBLIC_REPO: makerhub-india/data
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Clone public repo
+        env:
+          PAT: ${{ secrets.PUBLIC_REPO_PAT }}
+        run: |
+          git clone "https://x-access-token:${PAT}@github.com/${PUBLIC_REPO}.git" /tmp/public-repo
+
+      - name: Copy data files
+        run: |
+          cp data/seeds/resources.json /tmp/public-repo/data/resources.json
+          cp data/seeds/funding.json   /tmp/public-repo/data/funding.json
+
+      - name: Commit and push
+        env:
+          PAT: ${{ secrets.PUBLIC_REPO_PAT }}
+        run: |
+          cd /tmp/public-repo
+          git config user.name  "MakerHub Bot"
+          git config user.email "bot@makerhub.in"
+          git add data/resources.json data/funding.json
+          if git diff --staged --quiet; then
+            echo "No changes to sync."
+            exit 0
+          fi
+          COUNT=$(python3 -c "import json; print(len(json.load(open('data/resources.json'))))")
+          git commit -m "sync: update dataset (${COUNT} resources)"
+          git push
