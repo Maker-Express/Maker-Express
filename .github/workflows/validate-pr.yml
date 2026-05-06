@@ -5,8 +5,30 @@ on:
     paths:
       - "resources/**"
       - "funding/**"
+      - "skills/**"
 
 jobs:
+  validate-skills:
+    runs-on: ubuntu-latest
+    if: contains(github.event.pull_request.labels.*.name, 'skill') || contains(join(github.event.pull_request.changed_files, ','), 'skills/')
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Security + quality scan
+        run: |
+          python3 scripts/check_skills.py skills/
+          EXIT=$?
+          if [ $EXIT -eq 2 ]; then
+            echo "❌ SECURITY issues found — cannot merge until resolved."
+            exit 2
+          elif [ $EXIT -eq 1 ]; then
+            echo "⚠️ Quality warnings. Maintainer review required."
+            exit 0  # don't block on quality warnings, but report them
+          fi
+
   validate:
     runs-on: ubuntu-latest
     steps:
