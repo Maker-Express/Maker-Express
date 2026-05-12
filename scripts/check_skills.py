@@ -402,7 +402,7 @@ def main() -> None:
         infos    = [i for i in r.issues if i.level == "INFO"]
 
         rel = r.path.relative_to(SKILLS_ROOT) if SKILLS_ROOT in r.path.parents else r.path
-        status = "✅" if not errors and not warnings else "❌" if errors else "⚠️"
+        status = "PASS" if not errors and not warnings else "FAIL" if errors else "WARN"
         score  = f"  score:{r.score}/100" if warnings or errors else ""
 
         print(f"{status} {rel}{score}")
@@ -420,13 +420,13 @@ def main() -> None:
     print(f"Scanned {len(reports)} skill(s). Issues: {total_issues}")
 
     if has_security_errors:
-        print("❌ SECURITY issues found — fix before merging.")
+        print("[FAIL] SECURITY issues found - fix before merging.")
         sys.exit(2)
     elif has_quality_warnings:
-        print("⚠️  Quality warnings found. Review before merging.")
+        print("[WARN] Quality warnings found. Review before merging.")
         sys.exit(1)
     else:
-        print("✅ All skills passed.")
+        print("[PASS] All skills passed.")
         sys.exit(0)
 
 

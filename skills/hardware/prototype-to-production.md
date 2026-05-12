@@ -90,6 +90,23 @@ For each phase, provide:
 - Recommended vendors from directory
 ```
 
+## Example
+
+Input: "IoT air quality sensor, 5 SKUs, prototype working, want to sell in India"
+
+→ `search_resources(type="pcb-fab", city="Bangalore", limit=5)` → returns 4 Bangalore PCB fabs
+→ `search_resources(type="testing-lab", city="Bangalore", limit=5)` → returns 6 labs (ETDC, BEL, STQC)
+→ `search_resources(type="certification-body", limit=10)` → returns BIS, WPC, BEE
+→ `get_grants(stage="prototype", category="electronics")` → returns 3 applicable schemes
+
+Returns:
+- EVT: 6–8 weeks, ₹2–5L — use PCBPower or Circuitronics; 3D print enclosure at Workbench Projects
+- DVT: 8–12 weeks, ₹5–15L — freeze design at DVT-2; ETDC Bangalore for EMC pre-scan
+- WPC type approval: 3–4 months, ₹1–2L — mandatory for WiFi module
+- BIS registration (CRS): 2–4 months, ₹50k–1L — mandatory for IoT devices
+- PVT at 100 units: Kaynes or Centum EMS; estimated ₹1,800/unit at 500 qty
+- Applicable grant: MeitY ESDM incentive — 20% capex subsidy for electronics manufacturing
+
 ## MCP tool calls
 1. `search_resources(type="pcb-fab", city="[CITY]", limit=5)`
 2. `search_resources(type="3d-printing", city="[CITY]", limit=5)`

@@ -158,12 +158,12 @@ def main() -> None:
     for f in files:
         errs = validate_file(f)
         if errs:
-            print(f"\n❌ {f.relative_to(f.parent.parent) if f.parent.name else f}:")
+            print(f"\n[FAIL] {f.relative_to(f.parent.parent) if f.parent.name else f}:")
             for e in errs:
                 print(e)
             total_errors += len(errs)
         else:
-            print(f"✅ {f.name}")
+            print(f"[PASS] {f.name}")
 
     print()
     if total_errors:

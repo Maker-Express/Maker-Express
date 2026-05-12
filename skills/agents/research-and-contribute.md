@@ -155,6 +155,20 @@ Powered by [hardstack.sh](https://hardstack.sh)"
 3. `search_resources(type="[TYPE]", city="[CITY]", limit=5)` — confirm gap exists
 4. `search_resources(q="[SLUG]", limit=3)` — check slug uniqueness
 
+## Example
+
+Input: "Find testing labs in Jaipur and add them"
+
+→ `list_resource_types()` → testing-lab has 66 entries
+→ `list_cities()` → Jaipur has 0 testing-lab entries ← gap confirmed
+→ `search_resources(type="testing-lab", city="Jaipur", limit=5)` → 0 results
+→ [web research] → finds RAJASTHAN TESTING LAB (rtl.rajasthan.gov.in) + 2 others
+→ `search_resources(q="rtl-jaipur", limit=3)` → 0 results ← slug is unique
+→ Formats 3 entries as Markdown sections
+→ `python3 scripts/validate_md.py resources/testing_lab.md` → OK
+→ Opens PR: "data: add 3 testing-lab resources in Jaipur"
+→ Returns PR URL with list of sources
+
 ## Quality bar
 
 Only submit resources that meet ALL of these:

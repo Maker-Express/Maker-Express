@@ -1,0 +1,109 @@
+name: Agent Submit
+
+on:
+  workflow_dispatch:
+    inputs:
+      resource_type:
+        description: "Resource type (e.g. testing-lab, pcb-fab, makerspace)"
+        required: true
+        type: string
+      entries_json:
+        description: "JSON array of resource entries to add"
+        required: true
+        type: string
+      source_urls:
+        description: "Newline-separated list of source URLs used for verification"
+        required: true
+        type: string
+      contributor:
+        description: "GitHub username of contributor (for attribution)"
+        required: false
+        type: string
+
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Validate inputs
+        env:
+          RESOURCE_TYPE: ${{ inputs.resource_type }}
+          ENTRIES_JSON: ${{ inputs.entries_json }}
+        run: |
+          python3 scripts/agent_validate.py
+
+      - name: Check for open PRs from agent
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          OPEN=$(gh pr list --author "github-actions[bot]" --state open --json number --jq length)
+          if [ "$OPEN" -ge 5 ]; then
+            echo "ERROR: Too many open agent PRs ($OPEN). Merge or close existing PRs first."
+            exit 1
+          fi
+          echo "Open agent PRs: $OPEN (limit: 5)"
+
+      - name: Generate Markdown entries
+        env:
+          RESOURCE_TYPE: ${{ inputs.resource_type }}
+          ENTRIES_JSON: ${{ inputs.entries_json }}
+          CONTRIBUTOR: ${{ inputs.contributor }}
+        run: |
+          python3 scripts/agent_generate_md.py
+
+      - name: Validate generated Markdown
+        run: python3 scripts/validate_md.py resources/
+
+      - name: Check for duplicate slugs
+        run: |
+          python3 - << 'EOF'
+          import re, sys
+          from pathlib import Path
+          SLUG_RE = re.compile(r"\|\s*\*\*Slug\*\*\s*\|\s*`([^`]+)`")
+          slugs = {}
+          dupes = []
+          for f in sorted(Path("resources").glob("*.md")):
+              if f.name == "README.md":
+                  continue
+              for m in SLUG_RE.finditer(f.read_text()):
+                  slug = m.group(1).strip()
+                  if slug in slugs:
+                      dupes.append(f"  '{slug}' in {f.name} (also in {slugs[slug]})")
+                  else:
+                      slugs[slug] = f.name
+          if dupes:
+              print("ERROR: Duplicate slugs found:")
+              print("\n".join(dupes))
+              sys.exit(1)
+          print(f"OK — {len(slugs)} unique slugs")
+          EOF
+
+      - name: Create branch and open PR
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RESOURCE_TYPE: ${{ inputs.resource_type }}
+          ENTRIES_JSON: ${{ inputs.entries_json }}
+          SOURCE_URLS: ${{ inputs.source_urls }}
+          CONTRIBUTOR: ${{ inputs.contributor }}
+        run: |
+          ENTRIES_COUNT=$(python3 -c "import json,os; print(len(json.loads(os.environ['ENTRIES_JSON'])))")
+          BRANCH="agent/add-${RESOURCE_TYPE}-$(date +%Y%m%d-%H%M%S)"
+
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$BRANCH"
+          git add resources/
+          git commit -m "data: add ${ENTRIES_COUNT} ${RESOURCE_TYPE} entries"
+          git push origin "$BRANCH"
+
+          python3 scripts/agent_open_pr.py

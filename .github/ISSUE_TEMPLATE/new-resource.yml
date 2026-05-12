@@ -1,0 +1,82 @@
+name: Add a new resource
+description: Request a new lab, fab, makerspace, or other hardware resource to be added
+labels: ["data", "good-first-issue"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for contributing! Please verify the resource exists and is publicly accessible before submitting.
+        See [CONTRIBUTING.md](../CONTRIBUTING.md) for the access level definitions.
+
+  - type: input
+    id: name
+    attributes:
+      label: Resource name
+      description: Official name as it appears on their website
+      placeholder: "e.g. STQC Electronics Testing Centre, Bangalore"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: type
+    attributes:
+      label: Resource type
+      options:
+        - testing-lab
+        - pcb-fab
+        - makerspace
+        - manufacturer
+        - component-supplier
+        - distributor
+        - prototyping-lab
+        - research-lab
+        - certification-body
+        - accelerator
+        - online-tool
+        - other
+    validations:
+      required: true
+
+  - type: input
+    id: location
+    attributes:
+      label: City, State
+      placeholder: "e.g. Bangalore, Karnataka"
+    validations:
+      required: true
+
+  - type: input
+    id: website
+    attributes:
+      label: Website URL
+      placeholder: "https://..."
+
+  - type: dropdown
+    id: access
+    attributes:
+      label: Access level
+      description: "L0 = public/open, L1 = open fee-based, L2 = institutional, L3 = restricted, L4 = clearance required"
+      options:
+        - "L0 — Open (free public access)"
+        - "L1 — Open (fee-based)"
+        - "L2 — Institutional (affiliation required)"
+        - "L3 — Restricted (application/approval)"
+        - "L4 — Restricted (security clearance)"
+    validations:
+      required: true
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional notes
+      description: Equipment, certifications, specialisations, or anything else useful
+      placeholder: "e.g. NABL-accredited for EMC, offers same-week turnaround for PCBs under 100pcs"
+
+  - type: input
+    id: source
+    attributes:
+      label: Source URL
+      description: Where did you find/verify this resource?
+      placeholder: "e.g. https://nabl.gov.in/accredited-labs"
+    validations:
+      required: true

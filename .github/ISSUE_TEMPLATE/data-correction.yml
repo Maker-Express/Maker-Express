@@ -1,0 +1,51 @@
+name: Data correction
+description: Report an incorrect, outdated, or missing field on an existing resource
+labels: ["data", "correction"]
+body:
+  - type: input
+    id: slug
+    attributes:
+      label: Resource slug
+      description: The unique identifier — shown as `slug` in the resource table
+      placeholder: "e.g. stqc-bangalore"
+    validations:
+      required: true
+
+  - type: input
+    id: field
+    attributes:
+      label: Field to correct
+      placeholder: "e.g. website, access_level, city, tags"
+    validations:
+      required: true
+
+  - type: input
+    id: current
+    attributes:
+      label: Current (incorrect) value
+      placeholder: "e.g. https://old-url.com"
+    validations:
+      required: true
+
+  - type: input
+    id: correct
+    attributes:
+      label: Correct value
+      placeholder: "e.g. https://new-url.com"
+    validations:
+      required: true
+
+  - type: input
+    id: source
+    attributes:
+      label: Source
+      description: Where did you verify the correct value?
+      placeholder: "e.g. https://stqc.gov.in/about"
+    validations:
+      required: true
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional context
+      description: Anything else useful (e.g. resource moved, merged with another org, permanently closed)

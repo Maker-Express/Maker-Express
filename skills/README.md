@@ -36,12 +36,19 @@ Call the MCP tools listed in the skill's `mcp_tools` frontmatter directly.
 | [pcb-design-review](hardware/pcb-design-review.md) | PCB schematic + layout + SI + safety review | search_resources | ✅ verified |
 | [source-components-india](hardware/source-components-india.md) | Find distributors + assess supply chain risk | search_resources, get_resource | ✅ verified |
 | [prototype-to-production](hardware/prototype-to-production.md) | EVT→DVT→PVT→cert roadmap with vendors + grants | search_resources, get_resource, get_grants | ✅ verified |
+| [estimate-bom-cost](hardware/estimate-bom-cost.md) | Rough BOM cost estimation — components, assembly, NRE for India | search_resources, get_grants | ⬜ unverified |
+| [navigate-bis-certification](hardware/navigate-bis-certification.md) | Step-by-step BIS CRS and ISI mark process + lab finder | search_resources, get_resource | ⬜ unverified |
+| [supply-chain-risk-india](hardware/supply-chain-risk-india.md) | Single-source and import risk assessment + mitigation | search_resources, get_resource | ⬜ unverified |
+| [export-compliance](hardware/export-compliance.md) | CE, FCC, UKCA, SCOMET, DGFT for India-made hardware | search_resources, get_resource | ⬜ unverified |
+| [find-incubator-accelerator](hardware/find-incubator-accelerator.md) | Match startup stage + domain to Indian incubators and grants | search_resources, get_resource, get_grants | ⬜ unverified |
+| [medical-device-pathway](hardware/medical-device-pathway.md) | CDSCO Class A/B/C/D pathway, testing labs, clinical evaluation | search_resources, get_resource, get_grants | ⬜ unverified |
 
 ### 🤖 Agent skills
 
 | Skill | Description | Security |
 |-------|-------------|----------|
 | [research-and-contribute](agents/research-and-contribute.md) | Autonomous loop: find gaps → research → add resources → open PR | ✅ verified |
+| [audit-resource-quality](agents/audit-resource-quality.md) | Audit existing entries — verify URLs, flag stale data, open correction PRs | ⬜ unverified |
 
 ---
 
@@ -72,12 +79,12 @@ All submitted skills start as `unverified`. The CI scanner runs automatically on
 
 ## Roadmap
 
-- [ ] `estimate-bom-cost` — rough BOM costing for Indian market
-- [ ] `navigate-bis-certification` — step-by-step BIS/ISI mark process
-- [ ] `supply-chain-risk-india` — assess single-source and import risks
-- [ ] `export-compliance` — CE, FCC, and export requirements for India-made products
-- [ ] `find-incubator-accelerator` — match startup stage to right program
-- [ ] `medical-device-pathway` — CDSCO Class A/B/C device pathway
+- [x] `estimate-bom-cost` — rough BOM costing for Indian market
+- [x] `navigate-bis-certification` — step-by-step BIS/ISI mark process
+- [x] `supply-chain-risk-india` — assess single-source and import risks
+- [x] `export-compliance` — CE, FCC, and export requirements for India-made products
+- [x] `find-incubator-accelerator` — match startup stage to right program
+- [x] `medical-device-pathway` — CDSCO Class A/B/C device pathway
 - [ ] `audit-resource-quality` — agent skill to verify existing directory entries
 
 Want to add a skill? Open an issue or PR.

@@ -1,0 +1,56 @@
+name: Verify Skill
+
+on:
+  pull_request:
+    paths:
+      - "skills/**"
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Find changed skill files
+        id: changed
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        run: |
+          FILES=$(git diff --name-only "${BASE_SHA}...HEAD" -- 'skills/**/*.md' | tr '\n' ' ')
+          echo "files=${FILES}" >> "${GITHUB_OUTPUT}"
+          echo "Changed skill files: ${FILES}"
+
+      - name: Run security scanner
+        id: scan
+        if: steps.changed.outputs.files != ''
+        env:
+          CHANGED_FILES: ${{ steps.changed.outputs.files }}
+        run: |
+          python3 scripts/check_skills.py ${CHANGED_FILES} > /tmp/scan_output.txt 2>&1
+          echo "exit_code=$?" >> "${GITHUB_OUTPUT}"
+          cat /tmp/scan_output.txt
+
+      - name: Post scan results as PR comment
+        if: steps.changed.outputs.files != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          SCAN_EXIT_CODE: ${{ steps.scan.outputs.exit_code }}
+          SCAN_OUTPUT: /tmp/scan_output.txt
+        run: python3 scripts/skill_scan_comment.py
+
+      - name: Fail on security issues
+        if: steps.scan.outputs.exit_code == '2'
+        run: |
+          echo "Security issues found — blocking merge."
+          exit 2
