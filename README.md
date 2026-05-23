@@ -25,6 +25,12 @@ The open dataset and tools powering **[hardstack.sh](https://hardstack.sh)** —
 
 ---
 
+## 🔗 External curated lists
+
+- [awesome-mecheng](https://github.com/m2n037/awesome-mecheng) by @m2n037 — Curated list of mechanical engineering resources (1.6k⭐)
+
+---
+
 ## 📂 Browse resources
 
 <details open>
