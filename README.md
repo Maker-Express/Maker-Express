@@ -76,6 +76,7 @@ npm run build
 - [Documentation Index](docs/README.md)
 - [Repository Structure](docs/repository-structure.md)
 - [Data Model](docs/data-model.md)
+- [Skills Verification Boundary](docs/skills-verification-boundary.md)
 
 ## Contributing
 

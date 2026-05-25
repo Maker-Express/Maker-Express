@@ -6,6 +6,7 @@ Dense, implementation-focused references for contributors and agent workflows.
 
 - [Repository Structure](repository-structure.md)
 - [Data Model](data-model.md)
+- [Skills Verification Boundary](skills-verification-boundary.md)
 
 ## Primary Project Entry Points
 

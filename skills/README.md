@@ -36,6 +36,9 @@ Call the MCP tools listed in the skill's `mcp_tools` frontmatter directly.
 | [pcb-design-review](hardware/pcb-design-review.md) | PCB schematic + layout + SI + safety review | search_resources | ✅ verified |
 | [source-components-india](hardware/source-components-india.md) | Find distributors + assess supply chain risk | search_resources, get_resource | ✅ verified |
 | [prototype-to-production](hardware/prototype-to-production.md) | EVT→DVT→PVT→cert roadmap with vendors + grants | search_resources, get_resource, get_grants | ✅ verified |
+| [find-cad-consultant](hardware/find-cad-consultant.md) | Find CAD consultants by domain, deliverable type, and city | search_resources, get_resource | ⬜ unverified |
+| [cad-dfm-handoff](hardware/cad-dfm-handoff.md) | Convert CAD concepts into manufacturing-ready DFM handoff packets | search_resources, get_resource | ⬜ unverified |
+| [cad-tolerance-stack-check](hardware/cad-tolerance-stack-check.md) | Catch tolerance stack-up risks before tooling or pilot builds | search_resources, get_resource | ⬜ unverified |
 | [estimate-bom-cost](hardware/estimate-bom-cost.md) | Rough BOM cost estimation — components, assembly, NRE for India | search_resources, get_grants | ⬜ unverified |
 | [navigate-bis-certification](hardware/navigate-bis-certification.md) | Step-by-step BIS CRS and ISI mark process + lab finder | search_resources, get_resource | ⬜ unverified |
 | [supply-chain-risk-india](hardware/supply-chain-risk-india.md) | Single-source and import risk assessment + mitigation | search_resources, get_resource | ⬜ unverified |
@@ -63,6 +66,9 @@ Call the MCP tools listed in the skill's `mcp_tools` frontmatter directly.
 
 All submitted skills start as `unverified`. The CI scanner runs automatically on every PR.
 
+Public repo contains only limited verification metadata (`security_status`, `verified_by`, `last_reviewed`).
+Full audit artifacts and deeper verification traces are kept in the private operations repository.
+
 ---
 
 ## Submit a skill
@@ -85,6 +91,16 @@ All submitted skills start as `unverified`. The CI scanner runs automatically on
 - [x] `export-compliance` — CE, FCC, and export requirements for India-made products
 - [x] `find-incubator-accelerator` — match startup stage to right program
 - [x] `medical-device-pathway` — CDSCO Class A/B/C device pathway
+- [x] `find-cad-consultant` — shortlist CAD consultants with manufacturing-handoff focus
+- [x] `cad-dfm-handoff` — turn CAD into manufacturing-ready release packets
+- [x] `cad-tolerance-stack-check` — pre-tooling assembly stack-risk checks
 - [ ] `audit-resource-quality` — agent skill to verify existing directory entries
 
 Want to add a skill? Open an issue or PR.
+
+## CAD source credit
+
+- Community CAD skill source: [earthtojake/text-to-cad](https://github.com/earthtojake/text-to-cad)
+- Open CAD toolchain references:
+  - [FreeCAD/FreeCAD](https://github.com/FreeCAD/FreeCAD)
+  - [openscad/openscad](https://github.com/openscad/openscad)
