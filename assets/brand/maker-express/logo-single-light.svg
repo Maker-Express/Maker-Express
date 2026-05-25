@@ -1,0 +1,20 @@
+<svg width="980" height="300" viewBox="0 0 980 300" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Maker Express logo</title>
+  <desc id="desc">Maker Express lockup with split-nozzle M.E mark, laser source, dotted beam, and rotated gear endpoint.</desc>
+  <style>
+    .word{fill:#fffaf6;font-family:"Avenir Next","Neue Haas Grotesk Text","Helvetica Neue",Arial,sans-serif;font-weight:760;letter-spacing:-.03em}.domain{fill:#fffaf6;font-family:"JetBrains Mono","SF Mono",Menlo,monospace;font-weight:760;letter-spacing:.08em}.beam{stroke:#fffaf6;stroke-width:3;stroke-linecap:round;stroke-dasharray:1 10}.beam-glow{stroke:#fffaf6;stroke-width:9;stroke-linecap:round;opacity:.18}.spot-glow{fill:#fffaf6;opacity:.18}.gear{fill:#fffaf6}.hole{fill:#fffaf6}
+  </style>
+  <defs><g id="mx-logo-spot"><circle class="spot-glow" cx="0" cy="0" r="14"/><circle fill="#fffaf6" cx="0" cy="0" r="7.5"/><circle class="hole" cx="0" cy="0" r="3"/></g><g id="mx-logo-gear"><path class="gear" d="M 0 -14 L 3 -9 L 9 -10 L 8 -4 L 14 0 L 8 4 L 9 10 L 3 9 L 0 14 L -3 9 L -9 10 L -8 4 L -14 0 L -8 -4 L -9 -10 L -3 -9 Z"/><circle class="hole" cx="0" cy="0" r="5.2"/></g></defs>
+  <g transform="translate(64 54)">
+    <defs>
+      <mask id="mxLogo-m-split" maskUnits="userSpaceOnUse"><rect width="300" height="190" fill="white"/><path d="M 109 94 L 109 151" stroke="black" stroke-width="5.5" stroke-linecap="round"/></mask>
+      <mask id="mxLogo-e-cutouts" maskUnits="userSpaceOnUse"><rect width="300" height="190" fill="white"/><circle cx="232" cy="35" r="8.2" fill="black"/><circle cx="232" cy="93" r="8.2" fill="black"/><circle cx="232" cy="151" r="11.5" fill="black"/><circle cx="283" cy="35" r="7.4" fill="black"/><circle cx="283" cy="93" r="7.4" fill="black"/><rect x="275" y="143" width="16" height="16" rx="3" fill="black"/></mask>
+    </defs>
+    <path d="M 22 148 L 22 34 C 22 24 29 18 39 18 L 57 18 C 64 18 70 22 73 28 L 101 91 C 104 98 113 98 116 91 L 144 28 C 147 22 153 18 160 18 L 178 18 C 188 18 195 24 195 34 L 195 148 C 195 158 188 164 178 164 L 160 164 C 150 164 144 158 144 148 L 144 89 L 121 135 L 116 151 L 102 151 L 97 135 L 74 89 L 74 148 C 74 158 67 164 58 164 L 39 164 C 29 164 22 158 22 148 Z" fill="#fffaf6" mask="url(#mxLogo-m-split)"/>
+    <g mask="url(#mxLogo-e-cutouts)"><path d="M 232 35 L 232 151 M 232 35 L 283 35 M 232 93 L 283 93 M 232 151 L 283 151" stroke="#fffaf6" stroke-width="34" stroke-linecap="round" stroke-linejoin="round"/></g>
+  </g>
+  <g transform="translate(412 103)">
+    <text class="word" x="0" y="0" font-size="66">Maker</text><text class="word" x="0" y="72" font-size="66">Express</text><text class="domain" x="2" y="122" font-size="18">MAKER.EXPRESS</text>
+    <path class="beam-glow" d="M 200 115 L 352 115"/><path class="beam" d="M 200 115 L 352 115"/><use href="#mx-logo-spot" transform="translate(190 115)"/><use href="#mx-logo-gear" transform="translate(362 115) rotate(24) scale(1.24)"/>
+  </g>
+</svg>
