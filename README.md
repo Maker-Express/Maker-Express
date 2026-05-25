@@ -13,7 +13,7 @@ One platform. Two brand front doors. Same data plane, same MCP layer, same skill
 [![Skills](https://img.shields.io/badge/skills-agentic-0ea5e9?style=flat-square)](skills/)
 [![Contributions](https://img.shields.io/badge/contributions-welcome-2563eb?style=flat-square)](CONTRIBUTING.md)
 
-[Resources](resources/) · [Funding](funding/) · [MCP](mcp/) · [Skills](skills/) · [Roadmap](ROADMAP.md) · [Contribute](#contributing)
+[Resources](resources/) · [Funding](funding/) · [MCP](mcp/) · [Skills](skills/) · [Docs](docs/README.md) · [Roadmap](ROADMAP.md) · [Contribute](#contributing)
 
 </div>
 
@@ -42,32 +42,19 @@ One platform. Two brand front doors. Same data plane, same MCP layer, same skill
 
 Both brands run on the same core repository and shared infrastructure. Branding is runtime-selected, not forked.
 
-## What Is In This Repo
+## Why This Repo Exists
 
-- public hardware directory data across labs, suppliers, grants, investors, makerspaces, services
-- funding catalogs and source-backed grant references
-- MCP package for AI-agent retrieval workflows
-- skills library for repeatable maker operations
-- validators and tests used in CI and agent pipelines
+This is the public, agent-friendly layer of the Maker Express/Hardstack ecosystem:
 
-Production web runtime, admin internals, and private ops stay in `Maker-Express/Main` (private).
+- high-signal hardware ecosystem data
+- funding + grants intelligence
+- MCP server package
+- reusable agent skills
+- contributor automation and validators
 
-## Repository Layout
+Private runtime/admin/deploy internals live in [Maker-Express/Main](https://github.com/Maker-Express/Main) (private).
 
-```text
-public-repo/
-├── assets/brand/   # Maker Express + Hardstack logos used in docs
-├── resources/      # Resource catalogs by type
-├── funding/        # Grants and funding catalogs
-├── mcp/            # MCP package and docs
-├── skills/         # Agent workflows and prompts
-├── schema/         # Canonical resource schema
-├── scripts/        # Validation and maintenance automation
-├── tests/          # Data/script tests
-└── README.md
-```
-
-## MCP + Skills (Core Capability)
+## MCP + Skills
 
 This repository is intentionally agent-ready:
 
@@ -75,13 +62,12 @@ This repository is intentionally agent-ready:
 - skills library for sourcing, compliance, prototyping, and data-audit workflows
 - contributor automation scripts for validation and PR hygiene
 
-Start here:
-
+Entry points:
 - [mcp/README.md](mcp/README.md)
 - [skills/README.md](skills/README.md)
 - [AGENT_CONTRIBUTING.md](AGENT_CONTRIBUTING.md)
 
-## Quick Start
+## Start In 60 Seconds
 
 ```bash
 git clone https://github.com/Maker-Express/Maker-Express.git
@@ -98,16 +84,11 @@ npm install
 npm run build
 ```
 
-## Data Contract
+## Docs
 
-Resources are normalized with fields including:
-
-- `name`, `slug`, `type`
-- `city`, `state`, `country`
-- `categories`, `tags`, `access_level`
-- `website`, `description`, `verified`
-
-Canonical schema: [schema/resource.schema.json](schema/resource.schema.json)
+- [Documentation Index](docs/README.md)
+- [Repository Structure](docs/repository-structure.md)
+- [Data Model](docs/data-model.md)
 
 ## Contributing
 
