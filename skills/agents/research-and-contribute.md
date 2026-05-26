@@ -29,13 +29,13 @@ resources via a pull request. This is the canonical "contribute with tokens" wor
 donate your compute time to expand the directory for the Indian maker community.
 
 **Expected runtime:** 10–30 minutes depending on scope.
-**Output:** A pull request to the hardstack-india/data public repo.
+**Output:** A pull request to the Maker Express public repo.
 
 ## Prompt template
 
 ```
 You are contributing to an open directory of India's hardware ecosystem.
-The directory lives at: https://github.com/hardstack-india/data
+The directory lives at: https://github.com/Maker-Express/Maker-Express
 
 Your mission: find real, verifiable hardware resources that are missing from the directory
 and submit them via a pull request.
@@ -110,7 +110,7 @@ Fix any errors before proceeding.
 == STEP 5: Submit PR ==
 
 ```bash
-git clone https://github.com/YOUR_FORK/data
+git clone https://github.com/YOUR_FORK/Maker-Express
 cd data
 git checkout -b add-[type]-[city]
 

@@ -79,7 +79,7 @@ def test_external_url_in_body_is_flagged():
 
 
 def test_github_url_is_not_flagged():
-    body = "See https://github.com/makerhub-india/resources for examples."
+    body = "See https://github.com/Maker-Express/Maker-Express for examples."
     issues: list[Issue] = []
     check_security(DUMMY_PATH, body, issues)
     exfil_errs = [i for i in issues if i.category == "SECURITY"]

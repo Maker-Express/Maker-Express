@@ -8,7 +8,7 @@ The format is simple: append `###` sections to the right `.md` file in `resource
 ## Setup
 
 ```bash
-git clone https://github.com/makerhub-india/data.git
+git clone https://github.com/Maker-Express/Maker-Express.git
 cd data
 ```
 

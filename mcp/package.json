@@ -15,7 +15,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "http://github.com/Samaritan-Bio/X.git",
+    "url": "https://github.com/Maker-Express/Maker-Express.git",
     "directory": "mcp"
   },
   "dependencies": {
