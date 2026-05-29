@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/Maker-Express/Maker-Express/blob/main/schema/resource.schema.json",
-  "title": "MakerHub India Resource",
-  "description": "A single hardware ecosystem resource in the MakerHub India directory.",
+  "title": "Maker Express Resource",
+  "description": "A single hardware ecosystem resource in the Maker Express and Hardstack directory.",
   "type": "object",
   "required": ["slug", "name", "type", "city", "state", "description_short", "categories"],
   "additionalProperties": true,

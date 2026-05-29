@@ -137,7 +137,7 @@ gh pr create \
 - [ ] Contributed-by fields set to my GitHub username
 
 🤖 Contributed using the research-and-contribute skill
-Powered by [hardstack.sh](https://hardstack.sh)"
+Powered by [hardstack.xyz](https://hardstack.xyz)"
 ```
 
 == RULES ==

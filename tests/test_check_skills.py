@@ -129,7 +129,7 @@ def test_complete_frontmatter_no_issues():
     meta = {
         "name": "Find Testing Lab",
         "version": "1.0",
-        "description": "Search the MakerHub directory for testing labs by capability",
+        "description": "Search the Maker Express directory for testing labs by capability",
         "compatible_with": ["claude-code", "cursor"],
         "tags": ["hardware", "testing"],
         "security_status": "community",

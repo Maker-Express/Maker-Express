@@ -1,0 +1,1443 @@
+{
+  "generated_at": "2026-05-29T00:00:00Z",
+  "source": "public-repo/skills plus audited third-party registries",
+  "counts": {
+    "first_party": 32,
+    "third_party": 7,
+    "total": 39
+  },
+  "skills": [
+    {
+      "id": "3d-print-process-selector",
+      "display_name": "3D Print Process Selector",
+      "description": "Select the optimal 3D printing process and material for a given part — FDM, SLA, SLS, MJF, DMLS",
+      "tags": [
+        "3d-printing",
+        "additive-manufacturing",
+        "prototyping",
+        "materials"
+      ],
+      "mcp_tools": [
+        "search_resources",
+        "get_resource"
+      ],
+      "source_repo": "Maker-Express/Maker-Express",
+      "source_path": "skills/hardware/3d-print-process-selector.md",
+      "source_url": "https://github.com/Maker-Express/Maker-Express/blob/main/skills/hardware/3d-print-process-selector.md",
+      "raw_url": "https://raw.githubusercontent.com/Maker-Express/Maker-Express/main/skills/hardware/3d-print-process-selector.md",
+      "source_author": "Maker Express",
+      "source_license": "CC BY 4.0",
+      "category": "hardware",
+      "first_party": true,
+      "security_status": "verified",
+      "file_sha256": "a8b905e738a922c97c3e9b676df23f6125e96ff4170f6a1b8487e98d1ff3e95d",
+      "audit": {
+        "audited_at": "2025-05-07T00:00:00Z",
+        "auditor": "maintainer review",
+        "pipeline_version": "public-registry-v1",
+        "layers_passed": [
+          "frontmatter",
+          "skill-scanner",
+          "maintainer-review"
+        ],
+        "pattern_findings": [],
+        "overall": "APPROVED"
+      }
+    },
+    {
+      "id": "audit-resource-quality",
+      "display_name": "Audit Resource Quality",
+      "description": "Autonomous audit of existing directory entries — verify websites, flag stale data, identify missing fields, and open correction PRs",
+      "tags": [
+        "agent",
+        "quality",
+        "audit",
+        "maintenance",
+        "automation"
+      ],
+      "mcp_tools": [
+        "search_resources",
+        "get_resource",
+        "list_resource_types",
+        "list_cities"
+      ],
+      "source_repo": "Maker-Express/Maker-Express",
+      "source_path": "skills/agents/audit-resource-quality.md",
+      "source_url": "https://github.com/Maker-Express/Maker-Express/blob/main/skills/agents/audit-resource-quality.md",
+      "raw_url": "https://raw.githubusercontent.com/Maker-Express/Maker-Express/main/skills/agents/audit-resource-quality.md",
+      "source_author": "Maker Express",
+      "source_license": "CC BY 4.0",
+      "category": "agent",
+      "first_party": true,
+      "security_status": "unverified",
+      "file_sha256": "f18cfd53aa61257130a257720e6ab3f14cd21daf08f8a1c56ce1c7a6e2640b8e",
+      "audit": {
+        "audited_at": null,
+        "auditor": null,
+        "pipeline_version": "public-registry-v1",
+        "layers_passed": [
+          "frontmatter"
+        ],
+        "pattern_findings": [],
+        "overall": "PENDING_REVIEW"
+      }
+    },
+    {
+      "id": "battery-safety-certification",
+      "display_name": "Battery Safety Certification",
+      "description": "Map battery-powered product risks to cell, pack, charger, transport, BIS, and export safety requirements",
+      "tags": [
+        "battery",
+        "safety",
+        "certification",
+        "compliance"
+      ],
+      "mcp_tools": [
+        "search_resources",
+        "get_resource"
+      ],
+      "source_repo": "Maker-Express/Maker-Express",
+      "source_path": "skills/hardware/battery-safety-certification.md",
+      "source_url": "https://github.com/Maker-Express/Maker-Express/blob/main/skills/hardware/battery-safety-certification.md",
+      "raw_url": "https://raw.githubusercontent.com/Maker-Express/Maker-Express/main/skills/hardware/battery-safety-certification.md",
+      "source_author": "Maker Express",
+      "source_license": "CC BY 4.0",
+      "category": "hardware",
+      "first_party": true,
+      "security_status": "community",
+      "file_sha256": "8486758397809689b37fe0460e7bb4b1b60433c9fed42dd13cfba332d67d8cce",
+      "audit": {
+        "audited_at": "2026-05-29T00:00:00Z",
+        "auditor": "maintainer review",
+        "pipeline_version": "public-registry-v1",
+        "layers_passed": [
+          "frontmatter",
+          "skill-scanner",
+          "maintainer-review"
+        ],
+        "pattern_findings": [],
+        "overall": "APPROVED"
+      }
+    },
+    {
+      "id": "cad-dfm-handoff",
+      "display_name": "CAD DFM Handoff",
+      "description": "Convert CAD concepts into manufacturing-ready DFM handoff packets for CNC, sheet-metal, and injection moulding",
+      "tags": [
+        "cad",
+        "dfm",
+        "manufacturing",
+        "handoff"
+      ],
+      "mcp_tools": [
+        "search_resources",
+        "get_resource"
+      ],
+      "source_repo": "Maker-Express/Maker-Express",
+      "source_path": "skills/hardware/cad-dfm-handoff.md",
+      "source_url": "https://github.com/Maker-Express/Maker-Express/blob/main/skills/hardware/cad-dfm-handoff.md",
+      "raw_url": "https://raw.githubusercontent.com/Maker-Express/Maker-Express/main/skills/hardware/cad-dfm-handoff.md",
+      "source_author": "Maker Express",
+      "source_license": "CC BY 4.0",
+      "category": "hardware",
+      "first_party": true,
+      "security_status": "unverified",
+      "file_sha256": "944650b783394a906d15daecb497f81d185601972a72761b0744cc05b855e912",
+      "audit": {
+        "audited_at": null,
+        "auditor": null,
+        "pipeline_version": "public-registry-v1",
+        "layers_passed": [
+          "frontmatter"
+        ],
+        "pattern_findings": [],
+        "overall": "PENDING_REVIEW"
+      }
+    },
+    {
+      "id": "cad-tolerance-stack-check",
+      "display_name": "CAD Tolerance Stack Check",
+      "description": "Review CAD assemblies for tolerance stack-up risk and recommend mitigation before tooling or pilot builds",
+      "tags": [
+        "cad",
+        "tolerance",
+        "assembly",
+        "quality"
+      ],
+      "mcp_tools": [
+        "search_resources",
+        "get_resource"
+      ],
+      "source_repo": "Maker-Express/Maker-Express",
+      "source_path": "skills/hardware/cad-tolerance-stack-check.md",
+      "source_url": "https://github.com/Maker-Express/Maker-Express/blob/main/skills/hardware/cad-tolerance-stack-check.md",
+      "raw_url": "https://raw.githubusercontent.com/Maker-Express/Maker-Express/main/skills/hardware/cad-tolerance-stack-check.md",
+      "source_author": "Maker Express",
+      "source_license": "CC BY 4.0",
+      "category": "hardware",
+      "first_party": true,
+      "security_status": "unverified",
+      "file_sha256": "1d268a0e0f0e50bbd1ccbd2de894005c85170c7d9c6bc597318421b9e8b2d495",
+      "audit": {
+        "audited_at": null,
+        "auditor": null,
+        "pipeline_version": "public-registry-v1",
+        "layers_passed": [
+          "frontmatter"
+        ],
+        "pattern_findings": [],
+        "overall": "PENDING_REVIEW"
+      }
+    },
+    {
+      "id": "certification-path-india",
+      "display_name": "Certification Path India",
+      "description": "Map any hardware product to its required Indian certifications and the labs/bodies that handle each",
+      "tags": [
+        "certification",
+        "bis",
+        "compliance",
+        "regulatory",
+        "india"
+      ],
+      "mcp_tools": [
+        "search_resources",
+        "get_resource"
+      ],
+      "source_repo": "Maker-Express/Maker-Express",
+      "source_path": "skills/hardware/certification-path-india.md",
+      "source_url": "https://github.com/Maker-Express/Maker-Express/blob/main/skills/hardware/certification-path-india.md",
+      "raw_url": "https://raw.githubusercontent.com/Maker-Express/Maker-Express/main/skills/hardware/certification-path-india.md",
+      "source_author": "Maker Express",
+      "source_license": "CC BY 4.0",
+      "category": "hardware",
+      "first_party": true,
+      "security_status": "verified",
+      "file_sha256": "da4be944b7680c7ad2d902644fcf4db6c889ab774b4639a5917a106f73e919d1",
+      "audit": {
+        "audited_at": "2025-05-07T00:00:00Z",
+        "auditor": "maintainer review",
+        "pipeline_version": "public-registry-v1",
+        "layers_passed": [
+          "frontmatter",
+          "skill-scanner",
+          "maintainer-review"
+        ],
+        "pattern_findings": [],
+        "overall": "APPROVED"
+      }
+    },
+    {
+      "id": "connector-selection-reliability",
+      "display_name": "Connector Selection Reliability",
+      "description": "Select reliable connectors for hardware products using current, vibration, mating-cycle, environment, and sourcing constraints",
+      "tags": [
+        "connectors",
+        "reliability",
+        "sourcing",
+        "mechanical"
+      ],
+      "mcp_tools": [
+        "search_resources",
+        "get_resource"
+      ],
+      "source_repo": "Maker-Express/Maker-Express",
+      "source_path": "skills/hardware/connector-selection-reliability.md",
+      "source_url": "https://github.com/Maker-Express/Maker-Express/blob/main/skills/hardware/connector-selection-reliability.md",
+      "raw_url": "https://raw.githubusercontent.com/Maker-Express/Maker-Express/main/skills/hardware/connector-selection-reliability.md",
+      "source_author": "Maker Express",
+      "source_license": "CC BY 4.0",
+      "category": "hardware",
+      "first_party": true,
+      "security_status": "community",
+      "file_sha256": "180109ef7b61121c54ef27fc7ef5fc096e639387c941332fea812d51d8353b30",
+      "audit": {
+        "audited_at": "2026-05-29T00:00:00Z",
+        "auditor": "maintainer review",
+        "pipeline_version": "public-registry-v1",
+        "layers_passed": [
+          "frontmatter",
+          "skill-scanner",
+          "maintainer-review"
+        ],
+        "pattern_findings": [],
+        "overall": "APPROVED"
+      }
+    },
+    {
+      "id": "dfm-review",
+      "display_name": "DFM Review",
+      "description": "Design for Manufacturability review — identify issues before sending to production",
+      "tags": [
+        "dfm",
+        "manufacturing",
+        "design-review",
+        "pcb",
+        "mechanical"
+      ],
+      "mcp_tools": [
+        "search_resources"
+      ],
+      "source_repo": "Maker-Express/Maker-Express",
+      "source_path": "skills/hardware/dfm-review.md",
+      "source_url": "https://github.com/Maker-Express/Maker-Express/blob/main/skills/hardware/dfm-review.md",
+      "raw_url": "https://raw.githubusercontent.com/Maker-Express/Maker-Express/main/skills/hardware/dfm-review.md",
+      "source_author": "Maker Express",
+      "source_license": "CC BY 4.0",
+      "category": "hardware",
+      "first_party": true,
+      "security_status": "verified",
+      "file_sha256": "bcce4a822b8eb2e158532aae92830e2cfc3a6fd4cd77636f96226f5394e2021e",
+      "audit": {
+        "audited_at": "2025-05-07T00:00:00Z",
+        "auditor": "maintainer review",
+        "pipeline_version": "public-registry-v1",
+        "layers_passed": [
+          "frontmatter",
+          "skill-scanner",
+          "maintainer-review"
+        ],
+        "pattern_findings": [],
+        "overall": "APPROVED"
+      }
+    },
+    {
+      "id": "emc-precompliance-plan",
+      "display_name": "EMC Precompliance Plan",
+      "description": "Build an EMC pre-compliance plan for electronics before formal lab testing, covering emissions, immunity, ESD, and design fixes",
+      "tags": [
+        "emc",
+        "compliance",
+        "electronics",
+        "testing"
+      ],
+      "mcp_tools": [
+        "search_resources",
+        "get_resource"
+      ],
+      "source_repo": "Maker-Express/Maker-Express",
+      "source_path": "skills/hardware/emc-precompliance-plan.md",
+      "source_url": "https://github.com/Maker-Express/Maker-Express/blob/main/skills/hardware/emc-precompliance-plan.md",
+      "raw_url": "https://raw.githubusercontent.com/Maker-Express/Maker-Express/main/skills/hardware/emc-precompliance-plan.md",
+      "source_author": "Maker Express",
+      "source_license": "CC BY 4.0",
+      "category": "hardware",
+      "first_party": true,
+      "security_status": "community",
+      "file_sha256": "6331b1d1cb19d7a7fc1c92e8ac39c1fe80c2f4a7966eb5ca4a8c84d408a96c0d",
+      "audit": {
+        "audited_at": "2026-05-29T00:00:00Z",
+        "auditor": "maintainer review",
+        "pipeline_version": "public-registry-v1",
+        "layers_passed": [
+          "frontmatter",
+          "skill-scanner",
+          "maintainer-review"
+        ],
+        "pattern_findings": [],
+        "overall": "APPROVED"
+      }
+    },
+    {
+      "id": "enclosure-ip-rating-plan",
+      "display_name": "Enclosure IP Rating Plan",
+      "description": "Plan enclosure sealing, gasket, vent, and test strategy for IP-rated hardware products",
+      "tags": [
+        "enclosure",
+        "ip-rating",
+        "mechanical",
+        "testing"
+      ],
+      "mcp_tools": [
+        "search_resources",
+        "get_resource"
+      ],
+      "source_repo": "Maker-Express/Maker-Express",
+      "source_path": "skills/hardware/enclosure-ip-rating-plan.md",
+      "source_url": "https://github.com/Maker-Express/Maker-Express/blob/main/skills/hardware/enclosure-ip-rating-plan.md",
+      "raw_url": "https://raw.githubusercontent.com/Maker-Express/Maker-Express/main/skills/hardware/enclosure-ip-rating-plan.md",
+      "source_author": "Maker Express",
+      "source_license": "CC BY 4.0",
+      "category": "hardware",
+      "first_party": true,
+      "security_status": "community",
+      "file_sha256": "6b396ee6bf2738df7460cb5995454a85251cd59ef2d5bedd04fab6cebb648df5",
+      "audit": {
+        "audited_at": "2026-05-29T00:00:00Z",
+        "auditor": "maintainer review",
+        "pipeline_version": "public-registry-v1",
+        "layers_passed": [
+          "frontmatter",
+          "skill-scanner",
+          "maintainer-review"
+        ],
+        "pattern_findings": [],
+        "overall": "APPROVED"
+      }
+    },
+    {
+      "id": "estimate-bom-cost",
+      "display_name": "Estimate BOM Cost",
+      "description": "Rough BOM cost estimation for Indian market — component, assembly, and NRE breakdown",
+      "tags": [
+        "bom",
+        "costing",
+        "manufacturing",
+        "sourcing"
+      ],
+      "mcp_tools": [
+        "search_resources",
+        "get_grants"
+      ],
+      "source_repo": "Maker-Express/Maker-Express",
+      "source_path": "skills/hardware/estimate-bom-cost.md",
+      "source_url": "https://github.com/Maker-Express/Maker-Express/blob/main/skills/hardware/estimate-bom-cost.md",
+      "raw_url": "https://raw.githubusercontent.com/Maker-Express/Maker-Express/main/skills/hardware/estimate-bom-cost.md",
+      "source_author": "Maker Express",
+      "source_license": "CC BY 4.0",
+      "category": "hardware",
+      "first_party": true,
+      "security_status": "unverified",
+      "file_sha256": "b3f2c9dd0fff07ec96b858057d202dc922d99d5c6a135f621fa6a0379ca34095",
+      "audit": {
+        "audited_at": null,
+        "auditor": null,
+        "pipeline_version": "public-registry-v1",
+        "layers_passed": [
+          "frontmatter"
+        ],
+        "pattern_findings": [],
+        "overall": "PENDING_REVIEW"
+      }
+    },
+    {
+      "id": "export-compliance",
+      "display_name": "Export Compliance",
+      "description": "Export compliance for India-made hardware — CE, FCC, UKCA marks, dual-use controls, DGFT requirements, and SCOMET classification",
+      "tags": [
+        "export",
+        "compliance",
+        "ce-mark",
+        "fcc",
+        "scomet",
+        "regulatory"
+      ],
+      "mcp_tools": [
+        "search_resources",
+        "get_resource"
+      ],
+      "source_repo": "Maker-Express/Maker-Express",
+      "source_path": "skills/hardware/export-compliance.md",
+      "source_url": "https://github.com/Maker-Express/Maker-Express/blob/main/skills/hardware/export-compliance.md",
+      "raw_url": "https://raw.githubusercontent.com/Maker-Express/Maker-Express/main/skills/hardware/export-compliance.md",
+      "source_author": "Maker Express",
+      "source_license": "CC BY 4.0",
+      "category": "hardware",
+      "first_party": true,
+      "security_status": "unverified",
+      "file_sha256": "86b96bed75e691150ef1150b939a167124c8cd49f5cd5e860a080e8c10c60392",
+      "audit": {
+        "audited_at": null,
+        "auditor": null,
+        "pipeline_version": "public-registry-v1",
+        "layers_passed": [
+          "frontmatter"
+        ],
+        "pattern_findings": [],
+        "overall": "PENDING_REVIEW"
+      }
+    },
+    {
+      "id": "field-serviceability-review",
+      "display_name": "Field Serviceability Review",
+      "description": "Review hardware for maintainability, repair, replacement, diagnostics, spares, and field-service workflows before launch",
+      "tags": [
+        "serviceability",
+        "reliability",
+        "operations",
+        "hardware"
+      ],
+      "mcp_tools": [
+        "search_resources",
+        "get_resource"
+      ],
+      "source_repo": "Maker-Express/Maker-Express",
+      "source_path": "skills/hardware/field-serviceability-review.md",
+      "source_url": "https://github.com/Maker-Express/Maker-Express/blob/main/skills/hardware/field-serviceability-review.md",
+      "raw_url": "https://raw.githubusercontent.com/Maker-Express/Maker-Express/main/skills/hardware/field-serviceability-review.md",
+      "source_author": "Maker Express",
+      "source_license": "CC BY 4.0",
+      "category": "hardware",
+      "first_party": true,
+      "security_status": "community",
+      "file_sha256": "8c5ab1900e5e5c8e94c7dfab5b106b28f1358ba0148b3af7f3e3fbf3624d3fa0",
+      "audit": {
+        "audited_at": "2026-05-29T00:00:00Z",
+        "auditor": "maintainer review",
+        "pipeline_version": "public-registry-v1",
+        "layers_passed": [
+          "frontmatter",
+          "skill-scanner",
+          "maintainer-review"
+        ],
+        "pattern_findings": [],
+        "overall": "APPROVED"
+      }
+    },
+    {
+      "id": "find-cad-consultant",
+      "display_name": "Find CAD Consultant",
+      "description": "Find CAD design consultants and product-design studios by domain, deliverable type, and city",
+      "tags": [
+        "cad",
+        "industrial-design",
+        "product-design",
+        "consulting"
+      ],
+      "mcp_tools": [
+        "search_resources",
+        "get_resource"
+      ],
+      "source_repo": "Maker-Express/Maker-Express",
+      "source_path": "skills/hardware/find-cad-consultant.md",
+      "source_url": "https://github.com/Maker-Express/Maker-Express/blob/main/skills/hardware/find-cad-consultant.md",
+      "raw_url": "https://raw.githubusercontent.com/Maker-Express/Maker-Express/main/skills/hardware/find-cad-consultant.md",
+      "source_author": "Maker Express",
+      "source_license": "CC BY 4.0",
+      "category": "hardware",
+      "first_party": true,
+      "security_status": "unverified",
+      "file_sha256": "a3480030e77176b254716228aa4cc9ee49a7936cf47f4abba6edf28eb546da78",
+      "audit": {
+        "audited_at": null,
+        "auditor": null,
+        "pipeline_version": "public-registry-v1",
+        "layers_passed": [
+          "frontmatter"
+        ],
+        "pattern_findings": [],
+        "overall": "PENDING_REVIEW"
+      }
+    },
+    {
+      "id": "find-incubator-accelerator",
+      "display_name": "Find Incubator Accelerator",
+      "description": "Match a hardware startup's stage and domain to the right Indian incubator, accelerator, or government program",
+      "tags": [
+        "incubator",
+        "accelerator",
+        "startup",
+        "funding",
+        "government"
+      ],
+      "mcp_tools": [
+        "search_resources",
+        "get_resource",
+        "get_grants"
+      ],
+      "source_repo": "Maker-Express/Maker-Express",
+      "source_path": "skills/hardware/find-incubator-accelerator.md",
+      "source_url": "https://github.com/Maker-Express/Maker-Express/blob/main/skills/hardware/find-incubator-accelerator.md",
+      "raw_url": "https://raw.githubusercontent.com/Maker-Express/Maker-Express/main/skills/hardware/find-incubator-accelerator.md",
+      "source_author": "Maker Express",
+      "source_license": "CC BY 4.0",
+      "category": "hardware",
+      "first_party": true,
+      "security_status": "unverified",
+      "file_sha256": "cbfebe3b6b23c8996ede52732812ebb1d7961844e2ae83d82602f464ff0253e2",
+      "audit": {
+        "audited_at": null,
+        "auditor": null,
+        "pipeline_version": "public-registry-v1",
+        "layers_passed": [
+          "frontmatter"
+        ],
+        "pattern_findings": [],
+        "overall": "PENDING_REVIEW"
+      }
+    },
+    {
+      "id": "find-pcb-fab",
+      "display_name": "Find PCB Fab",
+      "description": "Find PCB fabrication houses in India matched to your board specs and volume",
+      "tags": [
+        "pcb",
+        "fabrication",
+        "manufacturing",
+        "electronics"
+      ],
+      "mcp_tools": [
+        "search_resources",
+        "get_resource"
+      ],
+      "source_repo": "Maker-Express/Maker-Express",
+      "source_path": "skills/hardware/find-pcb-fab.md",
+      "source_url": "https://github.com/Maker-Express/Maker-Express/blob/main/skills/hardware/find-pcb-fab.md",
+      "raw_url": "https://raw.githubusercontent.com/Maker-Express/Maker-Express/main/skills/hardware/find-pcb-fab.md",
+      "source_author": "Maker Express",
+      "source_license": "CC BY 4.0",
+      "category": "hardware",
+      "first_party": true,
+      "security_status": "verified",
+      "file_sha256": "09c16df66896f6659647ab3e5d1ccf722f5e2dc39d967714fb72b78b721620a5",
+      "audit": {
+        "audited_at": "2025-05-07T00:00:00Z",
+        "auditor": "maintainer review",
+        "pipeline_version": "public-registry-v1",
+        "layers_passed": [
+          "frontmatter",
+          "skill-scanner",
+          "maintainer-review"
+        ],
+        "pattern_findings": [],
+        "overall": "APPROVED"
+      }
+    },
+    {
+      "id": "find-testing-lab",
+      "display_name": "Find Testing Lab",
+      "description": "Find the right testing lab for a hardware product given certification type and location",
+      "tags": [
+        "testing",
+        "certification",
+        "labs",
+        "nabl"
+      ],
+      "mcp_tools": [
+        "search_resources",
+        "get_resource"
+      ],
+      "source_repo": "Maker-Express/Maker-Express",
+      "source_path": "skills/hardware/find-testing-lab.md",
+      "source_url": "https://github.com/Maker-Express/Maker-Express/blob/main/skills/hardware/find-testing-lab.md",
+      "raw_url": "https://raw.githubusercontent.com/Maker-Express/Maker-Express/main/skills/hardware/find-testing-lab.md",
+      "source_author": "Maker Express",
+      "source_license": "CC BY 4.0",
+      "category": "hardware",
+      "first_party": true,
+      "security_status": "verified",
+      "file_sha256": "cbf79d6e81b60084ab3d74969ac3c73b63147489bf77cf42c301be17fc48e0b6",
+      "audit": {
+        "audited_at": "2025-05-07T00:00:00Z",
+        "auditor": "maintainer review",
+        "pipeline_version": "public-registry-v1",
+        "layers_passed": [
+          "frontmatter",
+          "skill-scanner",
+          "maintainer-review"
+        ],
+        "pattern_findings": [],
+        "overall": "APPROVED"
+      }
+    },
+    {
+      "id": "firmware-bringup-checklist",
+      "display_name": "Firmware Bringup Checklist",
+      "description": "Plan first-power firmware bring-up for embedded hardware with boot, debug, peripheral, and fault-isolation gates",
+      "tags": [
+        "firmware",
+        "embedded",
+        "bringup",
+        "debug"
+      ],
+      "mcp_tools": [
+        "search_resources",
+        "get_resource"
+      ],
+      "source_repo": "Maker-Express/Maker-Express",
+      "source_path": "skills/hardware/firmware-bringup-checklist.md",
+      "source_url": "https://github.com/Maker-Express/Maker-Express/blob/main/skills/hardware/firmware-bringup-checklist.md",
+      "raw_url": "https://raw.githubusercontent.com/Maker-Express/Maker-Express/main/skills/hardware/firmware-bringup-checklist.md",
+      "source_author": "Maker Express",
+      "source_license": "CC BY 4.0",
+      "category": "hardware",
+      "first_party": true,
+      "security_status": "community",
+      "file_sha256": "5f922efe5eb0c261b1f2bf334c63c02ecf8c7183a0ca23a5321557ff3e023b9a",
+      "audit": {
+        "audited_at": "2026-05-29T00:00:00Z",
+        "auditor": "maintainer review",
+        "pipeline_version": "public-registry-v1",
+        "layers_passed": [
+          "frontmatter",
+          "skill-scanner",
+          "maintainer-review"
+        ],
+        "pattern_findings": [],
+        "overall": "APPROVED"
+      }
+    },
+    {
+      "id": "grant-application-readiness",
+      "display_name": "Grant Application Readiness",
+      "description": "Check whether a hardware startup is ready to apply for grants and prepare a focused evidence pack",
+      "tags": [
+        "grants",
+        "funding",
+        "startup",
+        "evidence"
+      ],
+      "mcp_tools": [
+        "search_resources",
+        "get_grants"
+      ],
+      "source_repo": "Maker-Express/Maker-Express",
+      "source_path": "skills/hardware/grant-application-readiness.md",
+      "source_url": "https://github.com/Maker-Express/Maker-Express/blob/main/skills/hardware/grant-application-readiness.md",
+      "raw_url": "https://raw.githubusercontent.com/Maker-Express/Maker-Express/main/skills/hardware/grant-application-readiness.md",
+      "source_author": "Maker Express",
+      "source_license": "CC BY 4.0",
+      "category": "hardware",
+      "first_party": true,
+      "security_status": "community",
+      "file_sha256": "a505c9b44fcd99059e860260d4837bb6f166016c7bb501e672c293b2e8914dca",
+      "audit": {
+        "audited_at": "2026-05-29T00:00:00Z",
+        "auditor": "maintainer review",
+        "pipeline_version": "public-registry-v1",
+        "layers_passed": [
+          "frontmatter",
+          "skill-scanner",
+          "maintainer-review"
+        ],
+        "pattern_findings": [],
+        "overall": "APPROVED"
+      }
+    },
+    {
+      "id": "industrial-design-brief",
+      "display_name": "Industrial Design Brief",
+      "description": "Turn a hardware product idea into an industrial design brief with users, constraints, CMF, ergonomics, and prototype milestones",
+      "tags": [
+        "industrial-design",
+        "product-design",
+        "ux",
+        "prototyping"
+      ],
+      "mcp_tools": [
+        "search_resources",
+        "get_resource"
+      ],
+      "source_repo": "Maker-Express/Maker-Express",
+      "source_path": "skills/hardware/industrial-design-brief.md",
+      "source_url": "https://github.com/Maker-Express/Maker-Express/blob/main/skills/hardware/industrial-design-brief.md",
+      "raw_url": "https://raw.githubusercontent.com/Maker-Express/Maker-Express/main/skills/hardware/industrial-design-brief.md",
+      "source_author": "Maker Express",
+      "source_license": "CC BY 4.0",
+      "category": "hardware",
+      "first_party": true,
+      "security_status": "community",
+      "file_sha256": "2566981989d02106f276dea9c86a1a9e25710080f6c39e70506c2aed598e6287",
+      "audit": {
+        "audited_at": "2026-05-29T00:00:00Z",
+        "auditor": "maintainer review",
+        "pipeline_version": "public-registry-v1",
+        "layers_passed": [
+          "frontmatter",
+          "skill-scanner",
+          "maintainer-review"
+        ],
+        "pattern_findings": [],
+        "overall": "APPROVED"
+      }
+    },
+    {
+      "id": "injection-mould-dfm-gate",
+      "display_name": "Injection Mould DFM Gate",
+      "description": "Review plastic parts before tooling with injection-mould DFM, draft, wall thickness, ribs, bosses, gates, and texture checks",
+      "tags": [
+        "injection-moulding",
+        "dfm",
+        "plastics",
+        "tooling"
+      ],
+      "mcp_tools": [
+        "search_resources",
+        "get_resource"
+      ],
+      "source_repo": "Maker-Express/Maker-Express",
+      "source_path": "skills/hardware/injection-mould-dfm-gate.md",
+      "source_url": "https://github.com/Maker-Express/Maker-Express/blob/main/skills/hardware/injection-mould-dfm-gate.md",
+      "raw_url": "https://raw.githubusercontent.com/Maker-Express/Maker-Express/main/skills/hardware/injection-mould-dfm-gate.md",
+      "source_author": "Maker Express",
+      "source_license": "CC BY 4.0",
+      "category": "hardware",
+      "first_party": true,
+      "security_status": "community",
+      "file_sha256": "8bce842b11817e645cd0e4d4df36bc53b6051b5ac95e09f943317624909329bc",
+      "audit": {
+        "audited_at": "2026-05-29T00:00:00Z",
+        "auditor": "maintainer review",
+        "pipeline_version": "public-registry-v1",
+        "layers_passed": [
+          "frontmatter",
+          "skill-scanner",
+          "maintainer-review"
+        ],
+        "pattern_findings": [],
+        "overall": "APPROVED"
+      }
+    },
+    {
+      "id": "lab-visit-prep",
+      "display_name": "Lab Visit Prep",
+      "description": "Prepare for a hardware testing, fabrication, or prototyping lab visit with artifacts, questions, acceptance criteria, and follow-up actions",
+      "tags": [
+        "labs",
+        "prototyping",
+        "testing",
+        "operations"
+      ],
+      "mcp_tools": [
+        "search_resources",
+        "get_resource"
+      ],
+      "source_repo": "Maker-Express/Maker-Express",
+      "source_path": "skills/hardware/lab-visit-prep.md",
+      "source_url": "https://github.com/Maker-Express/Maker-Express/blob/main/skills/hardware/lab-visit-prep.md",
+      "raw_url": "https://raw.githubusercontent.com/Maker-Express/Maker-Express/main/skills/hardware/lab-visit-prep.md",
+      "source_author": "Maker Express",
+      "source_license": "CC BY 4.0",
+      "category": "hardware",
+      "first_party": true,
+      "security_status": "community",
+      "file_sha256": "71584d21183a9d3cd42df009b52efbced72c9269ecc6b9f6f1d5a911314cb078",
+      "audit": {
+        "audited_at": "2026-05-29T00:00:00Z",
+        "auditor": "maintainer review",
+        "pipeline_version": "public-registry-v1",
+        "layers_passed": [
+          "frontmatter",
+          "skill-scanner",
+          "maintainer-review"
+        ],
+        "pattern_findings": [],
+        "overall": "APPROVED"
+      }
+    },
+    {
+      "id": "manufacturing-rfq-compare",
+      "display_name": "Manufacturing RFQ Compare",
+      "description": "Build and compare manufacturing RFQs across vendors with cost, lead time, quality, terms, and risk scoring",
+      "tags": [
+        "rfq",
+        "manufacturing",
+        "procurement",
+        "vendor-selection"
+      ],
+      "mcp_tools": [
+        "search_resources",
+        "get_resource"
+      ],
+      "source_repo": "Maker-Express/Maker-Express",
+      "source_path": "skills/hardware/manufacturing-rfq-compare.md",
+      "source_url": "https://github.com/Maker-Express/Maker-Express/blob/main/skills/hardware/manufacturing-rfq-compare.md",
+      "raw_url": "https://raw.githubusercontent.com/Maker-Express/Maker-Express/main/skills/hardware/manufacturing-rfq-compare.md",
+      "source_author": "Maker Express",
+      "source_license": "CC BY 4.0",
+      "category": "hardware",
+      "first_party": true,
+      "security_status": "community",
+      "file_sha256": "9d7c6493686c08028297a45036169a4362dd6de2aa6c6e8fe5476bae1e4fc87e",
+      "audit": {
+        "audited_at": "2026-05-29T00:00:00Z",
+        "auditor": "maintainer review",
+        "pipeline_version": "public-registry-v1",
+        "layers_passed": [
+          "frontmatter",
+          "skill-scanner",
+          "maintainer-review"
+        ],
+        "pattern_findings": [],
+        "overall": "APPROVED"
+      }
+    },
+    {
+      "id": "medical-device-pathway",
+      "display_name": "Medical Device Pathway",
+      "description": "CDSCO regulatory pathway for Class A/B/C/D medical devices in India — MDR 2017 classification, registration, testing, and import/manufacturing licence",
+      "tags": [
+        "medical-device",
+        "cdsco",
+        "regulatory",
+        "compliance",
+        "india"
+      ],
+      "mcp_tools": [
+        "search_resources",
+        "get_resource",
+        "get_grants"
+      ],
+      "source_repo": "Maker-Express/Maker-Express",
+      "source_path": "skills/hardware/medical-device-pathway.md",
+      "source_url": "https://github.com/Maker-Express/Maker-Express/blob/main/skills/hardware/medical-device-pathway.md",
+      "raw_url": "https://raw.githubusercontent.com/Maker-Express/Maker-Express/main/skills/hardware/medical-device-pathway.md",
+      "source_author": "Maker Express",
+      "source_license": "CC BY 4.0",
+      "category": "hardware",
+      "first_party": true,
+      "security_status": "unverified",
+      "file_sha256": "f7f386da2aa00352d113c7d74c71b05f3a649eb479bfbc596f7003965e345ae6",
+      "audit": {
+        "audited_at": null,
+        "auditor": null,
+        "pipeline_version": "public-registry-v1",
+        "layers_passed": [
+          "frontmatter"
+        ],
+        "pattern_findings": [],
+        "overall": "PENDING_REVIEW"
+      }
+    },
+    {
+      "id": "navigate-bis-certification",
+      "display_name": "Navigate BIS Certification",
+      "description": "Step-by-step BIS/ISI mark and CRS (Compulsory Registration Scheme) process for electronics and electrical products sold in India",
+      "tags": [
+        "bis",
+        "certification",
+        "compliance",
+        "india",
+        "regulatory"
+      ],
+      "mcp_tools": [
+        "search_resources",
+        "get_resource"
+      ],
+      "source_repo": "Maker-Express/Maker-Express",
+      "source_path": "skills/hardware/navigate-bis-certification.md",
+      "source_url": "https://github.com/Maker-Express/Maker-Express/blob/main/skills/hardware/navigate-bis-certification.md",
+      "raw_url": "https://raw.githubusercontent.com/Maker-Express/Maker-Express/main/skills/hardware/navigate-bis-certification.md",
+      "source_author": "Maker Express",
+      "source_license": "CC BY 4.0",
+      "category": "hardware",
+      "first_party": true,
+      "security_status": "unverified",
+      "file_sha256": "2114b008a701b4d3f123ff8c1c1c2689295909e275ecebf07ad6bf22f618930d",
+      "audit": {
+        "audited_at": null,
+        "auditor": null,
+        "pipeline_version": "public-registry-v1",
+        "layers_passed": [
+          "frontmatter"
+        ],
+        "pattern_findings": [],
+        "overall": "PENDING_REVIEW"
+      }
+    },
+    {
+      "id": "open-source-cad-toolchain",
+      "display_name": "Open Source CAD Toolchain",
+      "description": "Select a free or open-source CAD, CAM, simulation, and documentation toolchain for hardware teams and makers",
+      "tags": [
+        "cad",
+        "open-source",
+        "tools",
+        "documentation"
+      ],
+      "mcp_tools": [
+        "search_resources",
+        "get_resource"
+      ],
+      "source_repo": "Maker-Express/Maker-Express",
+      "source_path": "skills/hardware/open-source-cad-toolchain.md",
+      "source_url": "https://github.com/Maker-Express/Maker-Express/blob/main/skills/hardware/open-source-cad-toolchain.md",
+      "raw_url": "https://raw.githubusercontent.com/Maker-Express/Maker-Express/main/skills/hardware/open-source-cad-toolchain.md",
+      "source_author": "Maker Express",
+      "source_license": "CC BY 4.0",
+      "category": "hardware",
+      "first_party": true,
+      "security_status": "community",
+      "file_sha256": "b913d28df787b63fd953cb2a93c3a7b1764e3bd7e0c2b62cf1c95f96134a16cc",
+      "audit": {
+        "audited_at": "2026-05-29T00:00:00Z",
+        "auditor": "maintainer review",
+        "pipeline_version": "public-registry-v1",
+        "layers_passed": [
+          "frontmatter",
+          "skill-scanner",
+          "maintainer-review"
+        ],
+        "pattern_findings": [],
+        "overall": "APPROVED"
+      }
+    },
+    {
+      "id": "pcb-design-review",
+      "display_name": "PCB Design Review",
+      "description": "Structured PCB design review covering schematic correctness, layout quality, signal integrity, and manufacturability",
+      "tags": [
+        "pcb",
+        "design-review",
+        "signal-integrity",
+        "electronics"
+      ],
+      "mcp_tools": [
+        "search_resources"
+      ],
+      "source_repo": "Maker-Express/Maker-Express",
+      "source_path": "skills/hardware/pcb-design-review.md",
+      "source_url": "https://github.com/Maker-Express/Maker-Express/blob/main/skills/hardware/pcb-design-review.md",
+      "raw_url": "https://raw.githubusercontent.com/Maker-Express/Maker-Express/main/skills/hardware/pcb-design-review.md",
+      "source_author": "Maker Express",
+      "source_license": "CC BY 4.0",
+      "category": "hardware",
+      "first_party": true,
+      "security_status": "verified",
+      "file_sha256": "1e3e1f4a5b92fe5fb8eed077eff3666cfb44dd2a575dc0bd99397a50732a511f",
+      "audit": {
+        "audited_at": "2025-05-07T00:00:00Z",
+        "auditor": "maintainer review",
+        "pipeline_version": "public-registry-v1",
+        "layers_passed": [
+          "frontmatter",
+          "skill-scanner",
+          "maintainer-review"
+        ],
+        "pattern_findings": [],
+        "overall": "APPROVED"
+      }
+    },
+    {
+      "id": "prototype-to-production",
+      "display_name": "Prototype To Production",
+      "description": "Plan the full journey from prototype to production-ready hardware — phases, milestones, and vendors",
+      "tags": [
+        "manufacturing",
+        "production",
+        "prototyping",
+        "planning",
+        "startup"
+      ],
+      "mcp_tools": [
+        "search_resources",
+        "get_resource",
+        "get_grants"
+      ],
+      "source_repo": "Maker-Express/Maker-Express",
+      "source_path": "skills/hardware/prototype-to-production.md",
+      "source_url": "https://github.com/Maker-Express/Maker-Express/blob/main/skills/hardware/prototype-to-production.md",
+      "raw_url": "https://raw.githubusercontent.com/Maker-Express/Maker-Express/main/skills/hardware/prototype-to-production.md",
+      "source_author": "Maker Express",
+      "source_license": "CC BY 4.0",
+      "category": "hardware",
+      "first_party": true,
+      "security_status": "verified",
+      "file_sha256": "d1f8f007732a34892e926bcbe1c4f0990542163c781551cbea2d99108b99275d",
+      "audit": {
+        "audited_at": "2025-05-07T00:00:00Z",
+        "auditor": "maintainer review",
+        "pipeline_version": "public-registry-v1",
+        "layers_passed": [
+          "frontmatter",
+          "skill-scanner",
+          "maintainer-review"
+        ],
+        "pattern_findings": [],
+        "overall": "APPROVED"
+      }
+    },
+    {
+      "id": "research-and-contribute",
+      "display_name": "Research And Contribute",
+      "description": "Full autonomous loop — research gaps in the directory, find real resources, validate, and open a PR",
+      "tags": [
+        "agent",
+        "contribution",
+        "research",
+        "automation"
+      ],
+      "mcp_tools": [
+        "search_resources",
+        "list_cities",
+        "list_resource_types"
+      ],
+      "source_repo": "Maker-Express/Maker-Express",
+      "source_path": "skills/agents/research-and-contribute.md",
+      "source_url": "https://github.com/Maker-Express/Maker-Express/blob/main/skills/agents/research-and-contribute.md",
+      "raw_url": "https://raw.githubusercontent.com/Maker-Express/Maker-Express/main/skills/agents/research-and-contribute.md",
+      "source_author": "Maker Express",
+      "source_license": "CC BY 4.0",
+      "category": "agent",
+      "first_party": true,
+      "security_status": "verified",
+      "file_sha256": "c940a6f2d5096eae34557c31f83f8456a4479da1a83b02102b41b957a8d218b8",
+      "audit": {
+        "audited_at": "2025-05-07T00:00:00Z",
+        "auditor": "maintainer review",
+        "pipeline_version": "public-registry-v1",
+        "layers_passed": [
+          "frontmatter",
+          "skill-scanner",
+          "maintainer-review"
+        ],
+        "pattern_findings": [],
+        "overall": "APPROVED"
+      }
+    },
+    {
+      "id": "robotics-actuator-selection",
+      "display_name": "Robotics Actuator Selection",
+      "description": "Select motors, gearboxes, servos, drivers, and local suppliers for robotics and automation projects",
+      "tags": [
+        "robotics",
+        "actuators",
+        "motors",
+        "controls"
+      ],
+      "mcp_tools": [
+        "search_resources",
+        "get_resource"
+      ],
+      "source_repo": "Maker-Express/Maker-Express",
+      "source_path": "skills/hardware/robotics-actuator-selection.md",
+      "source_url": "https://github.com/Maker-Express/Maker-Express/blob/main/skills/hardware/robotics-actuator-selection.md",
+      "raw_url": "https://raw.githubusercontent.com/Maker-Express/Maker-Express/main/skills/hardware/robotics-actuator-selection.md",
+      "source_author": "Maker Express",
+      "source_license": "CC BY 4.0",
+      "category": "hardware",
+      "first_party": true,
+      "security_status": "community",
+      "file_sha256": "5168469daa03b09d86efa4ea05e5ae82398e5620f9a70325b1dd812b84f5faa8",
+      "audit": {
+        "audited_at": "2026-05-29T00:00:00Z",
+        "auditor": "maintainer review",
+        "pipeline_version": "public-registry-v1",
+        "layers_passed": [
+          "frontmatter",
+          "skill-scanner",
+          "maintainer-review"
+        ],
+        "pattern_findings": [],
+        "overall": "APPROVED"
+      }
+    },
+    {
+      "id": "source-components-india",
+      "display_name": "Source Components India",
+      "description": "Find component distributors and stockists in India for a given component or BOM",
+      "tags": [
+        "components",
+        "sourcing",
+        "bom",
+        "distributors",
+        "supply-chain"
+      ],
+      "mcp_tools": [
+        "search_resources",
+        "get_resource"
+      ],
+      "source_repo": "Maker-Express/Maker-Express",
+      "source_path": "skills/hardware/source-components-india.md",
+      "source_url": "https://github.com/Maker-Express/Maker-Express/blob/main/skills/hardware/source-components-india.md",
+      "raw_url": "https://raw.githubusercontent.com/Maker-Express/Maker-Express/main/skills/hardware/source-components-india.md",
+      "source_author": "Maker Express",
+      "source_license": "CC BY 4.0",
+      "category": "hardware",
+      "first_party": true,
+      "security_status": "verified",
+      "file_sha256": "28141ee0401ff3888e51ff654902b34d6112f8d241fcc39f256f00df37d0d0fe",
+      "audit": {
+        "audited_at": "2025-05-07T00:00:00Z",
+        "auditor": "maintainer review",
+        "pipeline_version": "public-registry-v1",
+        "layers_passed": [
+          "frontmatter",
+          "skill-scanner",
+          "maintainer-review"
+        ],
+        "pattern_findings": [],
+        "overall": "APPROVED"
+      }
+    },
+    {
+      "id": "supply-chain-risk-india",
+      "display_name": "Supply Chain Risk India",
+      "description": "Assess supply chain risks for an Indian hardware product — single-source components, import dependency, lead time exposure, and mitigation strategies",
+      "tags": [
+        "supply-chain",
+        "sourcing",
+        "risk",
+        "procurement",
+        "india"
+      ],
+      "mcp_tools": [
+        "search_resources",
+        "get_resource"
+      ],
+      "source_repo": "Maker-Express/Maker-Express",
+      "source_path": "skills/hardware/supply-chain-risk-india.md",
+      "source_url": "https://github.com/Maker-Express/Maker-Express/blob/main/skills/hardware/supply-chain-risk-india.md",
+      "raw_url": "https://raw.githubusercontent.com/Maker-Express/Maker-Express/main/skills/hardware/supply-chain-risk-india.md",
+      "source_author": "Maker Express",
+      "source_license": "CC BY 4.0",
+      "category": "hardware",
+      "first_party": true,
+      "security_status": "unverified",
+      "file_sha256": "a7221ecf053506272884556a4d5f8964918a3d0547d7042c02b6acbb5368844c",
+      "audit": {
+        "audited_at": null,
+        "auditor": null,
+        "pipeline_version": "public-registry-v1",
+        "layers_passed": [
+          "frontmatter"
+        ],
+        "pattern_findings": [],
+        "overall": "PENDING_REVIEW"
+      }
+    },
+    {
+      "id": "earthtojake-cad",
+      "display_name": "Cad",
+      "source_repo": "earthtojake/text-to-cad",
+      "source_path": "skills/cad/SKILL.md",
+      "source_url": "https://github.com/earthtojake/text-to-cad",
+      "source_author": "@earthtojake",
+      "source_license": "MIT",
+      "pinned_commit_sha": "684d9330e3621c258b22fb5d5cab11e3f638b57e",
+      "file_sha256": "be2961a97cf8bf71e1db6477eb0508b962984ea3c2c650d8db44a99e306fa96c",
+      "audit": {
+        "audited_at": "2026-05-23T21:13:05Z",
+        "auditor": "skill-security-auditor v1.0",
+        "pipeline_version": "1.0",
+        "layers_passed": [
+          "source-verify",
+          "sanitize",
+          "pattern-analysis"
+        ],
+        "layer4_sandbox": "skipped-use --sandbox flag to enable Docker execution",
+        "pattern_findings": [],
+        "llm_risk_level": 0,
+        "llm_recommendation": "SKIPPED",
+        "overall": "APPROVED"
+      },
+      "update_watch": {
+        "last_checked": "2026-05-23T21:13:05Z",
+        "upstream_changed": false,
+        "new_commit_sha": null
+      },
+      "first_party": false,
+      "raw_url": "https://raw.githubusercontent.com/earthtojake/text-to-cad/684d9330e3621c258b22fb5d5cab11e3f638b57e/skills/cad/SKILL.md"
+    },
+    {
+      "id": "earthtojake-render",
+      "display_name": "Render",
+      "source_repo": "earthtojake/text-to-cad",
+      "source_path": "skills/render/SKILL.md",
+      "source_url": "https://github.com/earthtojake/text-to-cad",
+      "source_author": "@earthtojake",
+      "source_license": "MIT",
+      "pinned_commit_sha": "684d9330e3621c258b22fb5d5cab11e3f638b57e",
+      "file_sha256": "ef57718746961026e1bc228ebf8947a8ce63c7fc0849aebbec0f084eed6bb9ab",
+      "audit": {
+        "audited_at": "2026-05-23T21:13:07Z",
+        "auditor": "skill-security-auditor v1.0",
+        "pipeline_version": "1.0",
+        "layers_passed": [
+          "source-verify",
+          "sanitize",
+          "pattern-analysis"
+        ],
+        "layer4_sandbox": "skipped-use --sandbox flag to enable Docker execution",
+        "pattern_findings": [
+          {
+            "rule_id": "W-001",
+            "severity": "warn",
+            "line": 126
+          }
+        ],
+        "llm_risk_level": 0,
+        "llm_recommendation": "SKIPPED",
+        "overall": "APPROVED"
+      },
+      "update_watch": {
+        "last_checked": "2026-05-23T21:13:07Z",
+        "upstream_changed": false,
+        "new_commit_sha": null
+      },
+      "first_party": false,
+      "raw_url": "https://raw.githubusercontent.com/earthtojake/text-to-cad/684d9330e3621c258b22fb5d5cab11e3f638b57e/skills/render/SKILL.md"
+    },
+    {
+      "id": "earthtojake-sdf",
+      "display_name": "Sdf",
+      "source_repo": "earthtojake/text-to-cad",
+      "source_path": "skills/sdf/SKILL.md",
+      "source_url": "https://github.com/earthtojake/text-to-cad",
+      "source_author": "@earthtojake",
+      "source_license": "MIT",
+      "pinned_commit_sha": "684d9330e3621c258b22fb5d5cab11e3f638b57e",
+      "file_sha256": "8a5cb75796743aae18c21c41699846cb09225a42de376c5b1d4c0dbd2696561d",
+      "audit": {
+        "audited_at": "2026-05-23T21:13:16Z",
+        "auditor": "skill-security-auditor v1.0",
+        "pipeline_version": "1.0",
+        "layers_passed": [
+          "source-verify",
+          "sanitize",
+          "pattern-analysis"
+        ],
+        "layer4_sandbox": "skipped-use --sandbox flag to enable Docker execution",
+        "pattern_findings": [],
+        "llm_risk_level": 0,
+        "llm_recommendation": "SKIPPED",
+        "overall": "APPROVED"
+      },
+      "update_watch": {
+        "last_checked": "2026-05-23T21:13:16Z",
+        "upstream_changed": false,
+        "new_commit_sha": null
+      },
+      "first_party": false,
+      "raw_url": "https://raw.githubusercontent.com/earthtojake/text-to-cad/684d9330e3621c258b22fb5d5cab11e3f638b57e/skills/sdf/SKILL.md"
+    },
+    {
+      "id": "earthtojake-sendcutsend",
+      "display_name": "Sendcutsend",
+      "source_repo": "earthtojake/text-to-cad",
+      "source_path": "skills/sendcutsend/SKILL.md",
+      "source_url": "https://github.com/earthtojake/text-to-cad",
+      "source_author": "@earthtojake",
+      "source_license": "MIT",
+      "pinned_commit_sha": "684d9330e3621c258b22fb5d5cab11e3f638b57e",
+      "file_sha256": "d650e0cc25cdad65c80026a0c3127e6e406230adeb067d6a96c13baa974f1568",
+      "audit": {
+        "audited_at": "2026-05-23T21:13:18Z",
+        "auditor": "skill-security-auditor v1.0",
+        "pipeline_version": "1.0",
+        "layers_passed": [
+          "source-verify",
+          "sanitize",
+          "pattern-analysis"
+        ],
+        "layer4_sandbox": "skipped-use --sandbox flag to enable Docker execution",
+        "pattern_findings": [],
+        "llm_risk_level": 0,
+        "llm_recommendation": "SKIPPED",
+        "overall": "APPROVED"
+      },
+      "update_watch": {
+        "last_checked": "2026-05-23T21:13:18Z",
+        "upstream_changed": false,
+        "new_commit_sha": null
+      },
+      "first_party": false,
+      "raw_url": "https://raw.githubusercontent.com/earthtojake/text-to-cad/684d9330e3621c258b22fb5d5cab11e3f638b57e/skills/sendcutsend/SKILL.md"
+    },
+    {
+      "id": "earthtojake-srdf",
+      "display_name": "Srdf",
+      "source_repo": "earthtojake/text-to-cad",
+      "source_path": "skills/srdf/SKILL.md",
+      "source_url": "https://github.com/earthtojake/text-to-cad",
+      "source_author": "@earthtojake",
+      "source_license": "MIT",
+      "pinned_commit_sha": "684d9330e3621c258b22fb5d5cab11e3f638b57e",
+      "file_sha256": "679e9fa8263c7345ad3fcd6b2f341cf2f75a8c357182ff80436d8557226c91d5",
+      "audit": {
+        "audited_at": "2026-05-23T21:13:13Z",
+        "auditor": "skill-security-auditor v1.0",
+        "pipeline_version": "1.0",
+        "layers_passed": [
+          "source-verify",
+          "sanitize",
+          "pattern-analysis"
+        ],
+        "layer4_sandbox": "skipped-use --sandbox flag to enable Docker execution",
+        "pattern_findings": [],
+        "llm_risk_level": 0,
+        "llm_recommendation": "SKIPPED",
+        "overall": "APPROVED"
+      },
+      "update_watch": {
+        "last_checked": "2026-05-23T21:13:13Z",
+        "upstream_changed": false,
+        "new_commit_sha": null
+      },
+      "first_party": false,
+      "raw_url": "https://raw.githubusercontent.com/earthtojake/text-to-cad/684d9330e3621c258b22fb5d5cab11e3f638b57e/skills/srdf/SKILL.md"
+    },
+    {
+      "id": "earthtojake-step-parts",
+      "display_name": "Step Parts",
+      "source_repo": "earthtojake/text-to-cad",
+      "source_path": "skills/step-parts/SKILL.md",
+      "source_url": "https://github.com/earthtojake/text-to-cad",
+      "source_author": "@earthtojake",
+      "source_license": "MIT",
+      "pinned_commit_sha": "0470134a44a456c1c63e582a385509cec889a30b",
+      "file_sha256": "fd4e097514967fd59b33915e2a0d43b684e9ceb619ddf7a659d1e6d084038c08",
+      "audit": {
+        "audited_at": "2026-05-23T21:13:09Z",
+        "auditor": "skill-security-auditor v1.0",
+        "pipeline_version": "1.0",
+        "layers_passed": [
+          "source-verify",
+          "sanitize",
+          "pattern-analysis"
+        ],
+        "layer4_sandbox": "skipped-use --sandbox flag to enable Docker execution",
+        "pattern_findings": [
+          {
+            "rule_id": "W-001",
+            "severity": "warn",
+            "line": 10
+          },
+          {
+            "rule_id": "W-001",
+            "severity": "warn",
+            "line": 34
+          },
+          {
+            "rule_id": "W-001",
+            "severity": "warn",
+            "line": 59
+          }
+        ],
+        "llm_risk_level": 0,
+        "llm_recommendation": "SKIPPED",
+        "overall": "APPROVED"
+      },
+      "update_watch": {
+        "last_checked": "2026-05-23T21:13:09Z",
+        "upstream_changed": false,
+        "new_commit_sha": null
+      },
+      "first_party": false,
+      "raw_url": "https://raw.githubusercontent.com/earthtojake/text-to-cad/0470134a44a456c1c63e582a385509cec889a30b/skills/step-parts/SKILL.md"
+    },
+    {
+      "id": "earthtojake-urdf",
+      "display_name": "Urdf",
+      "source_repo": "earthtojake/text-to-cad",
+      "source_path": "skills/urdf/SKILL.md",
+      "source_url": "https://github.com/earthtojake/text-to-cad",
+      "source_author": "@earthtojake",
+      "source_license": "MIT",
+      "pinned_commit_sha": "684d9330e3621c258b22fb5d5cab11e3f638b57e",
+      "file_sha256": "0b6f76d44b3541145f6cc18a32890f5cbef7d28deea9b828aac715593b6adc0c",
+      "audit": {
+        "audited_at": "2026-05-23T21:13:11Z",
+        "auditor": "skill-security-auditor v1.0",
+        "pipeline_version": "1.0",
+        "layers_passed": [
+          "source-verify",
+          "sanitize",
+          "pattern-analysis"
+        ],
+        "layer4_sandbox": "skipped-use --sandbox flag to enable Docker execution",
+        "pattern_findings": [],
+        "llm_risk_level": 0,
+        "llm_recommendation": "SKIPPED",
+        "overall": "APPROVED"
+      },
+      "update_watch": {
+        "last_checked": "2026-05-23T21:13:11Z",
+        "upstream_changed": false,
+        "new_commit_sha": null
+      },
+      "first_party": false,
+      "raw_url": "https://raw.githubusercontent.com/earthtojake/text-to-cad/684d9330e3621c258b22fb5d5cab11e3f638b57e/skills/urdf/SKILL.md"
+    }
+  ]
+}

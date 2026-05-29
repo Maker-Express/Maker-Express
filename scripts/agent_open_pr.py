@@ -40,7 +40,7 @@ def main() -> int:
 
 ---
 \U0001f916 Submitted via `agent-submit.yml` workflow
-Powered by [hardstack.sh](https://hardstack.sh)"""
+Powered by [hardstack.xyz](https://hardstack.xyz)"""
 
     result = subprocess.run(
         [

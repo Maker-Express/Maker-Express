@@ -34,7 +34,7 @@ def main() -> int:
     body = (
         f"{header}\n\n{summary}\n\n"
         f"<details><summary>Scanner output</summary>\n\n```\n{output}\n```\n\n</details>\n\n"
-        f"---\n_Powered by [hardstack.sh](https://hardstack.sh)_"
+        f"---\n_Powered by [hardstack.xyz](https://hardstack.xyz)_"
     )
 
     subprocess.run(["gh", "pr", "comment", pr_number, "--body", body], check=True)

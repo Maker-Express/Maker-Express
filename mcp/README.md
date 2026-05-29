@@ -1,87 +1,95 @@
-# MakerHub India MCP Server
+# Maker Express + Hardstack MCP Server
 
-Connect any MCP-compatible AI client to the MakerHub India directory.
+Connect Claude Code, Codex, Cursor, or any MCP-compatible client to the shared Maker Express / Hardstack hardware directory.
 
-## What this does
+This package is the public agent interface for the same data core used by [maker.express](https://maker.express) and [hardstack.xyz](https://hardstack.xyz). It exposes resource search, grants, events, platform stats, skills discovery, and curated hardware GitHub resources.
 
-This MCP server exposes the MakerHub India API as tools that AI agents can call:
+## Tools
 
-| Tool | Description |
-|------|-------------|
-| `search_resources` | Full-text search with filters (type, city, category) |
-| `get_resource` | Get full details for a specific resource by slug |
-| `list_types` | List all resource types and counts |
-| `list_cities` | List cities with resource counts |
-| `get_grants` | Get funding/grant opportunities |
-| `find_nearby` | Find resources near a city (by type) |
+| Tool | Purpose |
+|---|---|
+| `search_resources` | Search labs, makerspaces, suppliers, PCB fabs, consultants, investors, events, and other hardware resources. |
+| `find_labs_for_certification` | Find labs for BIS, FCC, CE, NABL, ISO 17025, EMC, safety, and related certification work. |
+| `list_grants` | List grants, schemes, and funding opportunities. |
+| `get_resource_details` | Fetch one resource by slug. |
+| `search_events` | Search hardware events and workshops. |
+| `get_platform_stats` | Return live aggregate platform stats. |
+| `list_skills` | Discover first-party and curated third-party skills. |
+| `suggest_skills` | Suggest skills from a task description. |
+| `list_github_resources` | List curated hardware GitHub repos and awesome-lists. |
 
-## Setup
+Compatibility aliases are also registered for older public skills: `get_resource`, `get_grants`, `list_resource_types`, and `list_cities`.
 
-### 1. Get a free API key
-
-Register at [makerhub.in/api](https://makerhub.in/api) for a free key (1,000 requests/day).
-
-### 2. Install
+## Install
 
 ```bash
 cd mcp
 npm install
+npm run build
 ```
 
-### 3. Configure your AI client
+## Configure
 
-**Claude Desktop** (`~/Library/Application Support/Claude/claude_desktop_config.json`):
+Set the API origin and optional access keys through environment variables. Do not hardcode secrets in MCP client config files that are committed to git.
+
+```bash
+export HARDWARE_DIRECTORY_API_URL="https://api.maker.express"
+export HARDWARE_DIRECTORY_API_KEY="optional_read_key"
+export HARDWARE_DIRECTORY_MCP_SERVICE_KEY="optional_service_key"
+node dist/index.js
+```
+
+`HARDWARE_DIRECTORY_API_URL` can point to either brand as long as it exposes the same API contract.
+
+## Claude Desktop Example
+
 ```json
 {
   "mcpServers": {
-    "makerhub": {
+    "maker-express": {
       "command": "node",
-      "args": ["/path/to/mcp/dist/index.js"],
+      "args": ["/absolute/path/to/Maker-Express/mcp/dist/index.js"],
       "env": {
-        "MAKERHUB_API_KEY": "your_key_here"
+        "HARDWARE_DIRECTORY_API_URL": "https://api.maker.express"
       }
     }
   }
 }
 ```
 
-**Cursor / Continue / other MCP clients:** See their docs for MCP server configuration.
+## Example Prompts
 
-## Usage examples
-
-Once connected, you can ask your AI:
-
-```
-"Find EMC testing labs in Bangalore"
-→ search_resources(type="testing-lab", city="Bangalore", tags=["emc"])
-
-"What PCB fabs are available in Mumbai with quick turnaround?"
-→ search_resources(type="pcb-fab", city="Mumbai")
-
-"Get details for STQC Bangalore"
-→ get_resource(slug="stqc-bangalore")
-
-"What government grants are available for hardware startups?"
-→ get_grants(stage="early")
+```text
+Find EMC pre-compliance labs near Delhi for an IoT device.
 ```
 
-## Development
+```text
+Suggest agent skills for preparing an injection moulding RFQ.
+```
+
+```text
+List active grants for an early-stage robotics hardware startup.
+```
+
+## Validation
 
 ```bash
-npm run dev     # TypeScript watch mode
-npm run build   # Compile to dist/
-npm test        # Run tests
+npm run typecheck
+npm run build
+npm run smoke
+HARDWARE_DIRECTORY_API_URL=https://api.maker.express npm run smoke:prod
 ```
 
-## Self-hosting
+The smoke test verifies that all tools are registered and can optionally call the live API. It retries 429 responses before failing so production health checks do not become flaky under short bursts.
 
-The MCP server connects to `https://api.makerhub.in` by default.
-To point at a self-hosted API:
+## Security
 
-```bash
-export MAKERHUB_API_URL=http://localhost:8080
-```
+- Reads secrets only from environment variables.
+- Sends API keys as `Authorization: Bearer ...` when provided.
+- Sends service keys as `x-mcp-service-key` when provided.
+- Logs only MCP startup/tool count to stderr; tool responses remain on stdout as JSON-RPC payloads.
+- Third-party skills returned by `list_skills` are version-pinned and audit-gated.
 
 ## License
 
-MIT — See [../LICENSE](../LICENSE)
+MIT for code in `mcp/`. Public data and skills are covered by the repo-level license notes.

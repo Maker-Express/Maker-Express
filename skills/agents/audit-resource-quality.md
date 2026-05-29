@@ -134,7 +134,7 @@ For entries to auto-correct, format the changes following the existing entry for
 | **Access** | [CORRECTED_LEVEL] |
 | **Website** | [CORRECTED_URL] |
 | **Tags** | [corrected, tags] |
-| **Source** | [hardstack.sh](https://hardstack.sh) |
+| **Source** | [hardstack.xyz](https://hardstack.xyz) |
 
 [Corrected description.]
 
@@ -164,7 +164,7 @@ gh pr create --title "audit: correct [N] [type] entries in [city]" \
 [List verified URLs for each correction]
 
 🤖 Audited using the audit-resource-quality skill
-Powered by [hardstack.sh](https://hardstack.sh)"
+Powered by [hardstack.xyz](https://hardstack.xyz)"
 
 If no corrections, output a plain text report:
 AUDIT REPORT — [TYPE] in [CITY] — [DATE]

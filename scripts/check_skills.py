@@ -42,10 +42,18 @@ SKILLS_ROOT = Path(__file__).parent.parent / "skills"
 
 APPROVED_MCP_TOOLS = {
     "search_resources",
+    "find_labs_for_certification",
+    "list_grants",
     "get_resource",
+    "get_resource_details",
     "list_resource_types",
     "list_cities",
     "get_grants",
+    "get_platform_stats",
+    "search_events",
+    "list_skills",
+    "suggest_skills",
+    "list_github_resources",
 }
 
 VALID_PLATFORMS = {"claude-code", "codex", "mcp-only", "cursor", "gemini", "copilot"}
@@ -71,9 +79,9 @@ INJECTION_PATTERNS: list[tuple[str, str]] = [
 
 # Exfiltration: patterns that suggest data is being sent somewhere outside approved tools
 EXFILTRATION_PATTERNS: list[tuple[str, str]] = [
-    # Allow github.com, hardstack domains, and common documentation URLs
-    (r"https?://(?!hardstack\.sh|api\.hardstack\.sh|github\.com|githubusercontent\.com|shields\.io)[a-z0-9][-a-z0-9\.]*\.[a-z]{2,}/\S*", "external URL in prompt template"),
-    (r"\bcurl\b\s+https?://(?!hardstack\.sh|api\.hardstack\.sh|github\.com)", "curl to external URL"),
+    # Allow project-owned domains, GitHub, and common badge/documentation URLs.
+    (r"https?://(?!(?:maker\.express|api\.maker\.express|hardstack\.xyz|api\.hardstack\.xyz|github\.com|raw\.githubusercontent\.com|githubusercontent\.com|shields\.io)(?:/|$))[a-z0-9][-a-z0-9\.]*\.[a-z]{2,}/\S*", "external URL in prompt template"),
+    (r"\bcurl\b\s+https?://(?!(?:maker\.express|api\.maker\.express|hardstack\.xyz|api\.hardstack\.xyz|github\.com|raw\.githubusercontent\.com)(?:/|$))", "curl to external URL"),
     (r"callback_url|notify_url|ping_url", "webhook callback URL"),
     (r"send (?:results?|data|credentials?|tokens?) (?:to|at) https?://", "explicit data exfiltration instruction"),
     (r"POST (?:the )?(?:results?|data|output) (?:to|at) https?://", "POST data to external URL"),

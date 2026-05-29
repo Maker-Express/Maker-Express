@@ -35,7 +35,7 @@ def render_entry(entry: dict, contributor: str) -> str:
     if contributor:
         lines.append(f"| **Contributed by** | [@{contributor}](https://github.com/{contributor}) |\n")
 
-    lines.append("| **Source** | [hardstack.sh](https://hardstack.sh) |\n")
+    lines.append("| **Source** | [hardstack.xyz](https://hardstack.xyz) |\n")
 
     desc = (entry.get("description_short") or entry.get("description") or "").strip()
     if desc:
