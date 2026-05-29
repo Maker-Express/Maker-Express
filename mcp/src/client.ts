@@ -3,7 +3,9 @@
  *
  * Compatibility behavior:
  * - Primary path: legacy `/mcp/*` endpoints.
- * - Fallback path: current `/v1/*` endpoints when `/mcp/*` is not present (404/405).
+ * - Fallback path: current `/v1/*` + `/api/v1/*` endpoints when `/mcp/*` is not present.
+ * - Auth failures fail closed when credentials are configured. Anonymous clients may
+ *   fall back from protected `/mcp/*` to public read-only endpoints.
  */
 
 const API_BASE =
@@ -20,6 +22,8 @@ const SERVICE_KEY =
   process.env['HARDWARE_DIRECTORY_MCP_SERVICE_KEY'] ??
   process.env['MAKERHUB_MCP_SERVICE_KEY'] ??
   ''
+
+const HAS_CONFIGURED_CREDENTIALS = Boolean(API_KEY.trim() || SERVICE_KEY.trim())
 
 type QueryParams = Record<string, string | number | boolean | undefined>
 
@@ -79,6 +83,7 @@ async function fetchJson<T>(attempt: RequestAttempt): Promise<HttpResult<T>> {
 
 async function getCompat<T>(attempts: RequestAttempt[]): Promise<T> {
   let lastNotFound: { status: number; path: string; body: string } | null = null
+  let lastAnonymousMcpAuthFailure: { status: number; path: string; body: string } | null = null
 
   for (const attempt of attempts) {
     const result = await fetchJson<T>(attempt)
@@ -89,9 +94,24 @@ async function getCompat<T>(attempts: RequestAttempt[]): Promise<T> {
       return result.json
     }
 
-    // Compatibility fallback only for endpoint-not-found variants.
+    // Compatibility fallback for endpoint-not-found variants.
     if (result.status === 404 || result.status === 405) {
       lastNotFound = { status: result.status, path: attempt.path, body: result.body }
+      continue
+    }
+
+    // Secure downgrade rule:
+    // - If credentials were configured, 401/403 must fail closed so a bad/revoked key
+    //   is not silently bypassed by public fallback endpoints.
+    // - If no credentials were configured and the protected `/mcp/*` endpoint rejects
+    //   anonymous access, continue to public read-only fallbacks.
+    if ((result.status === 401 || result.status === 403) && attempt.path.startsWith('/mcp/')) {
+      if (HAS_CONFIGURED_CREDENTIALS) {
+        throw new Error(
+          `Directory API auth failed ${result.status} on ${attempt.path}; refusing public fallback because credentials are configured.`
+        )
+      }
+      lastAnonymousMcpAuthFailure = { status: result.status, path: attempt.path, body: result.body }
       continue
     }
 
@@ -100,6 +120,11 @@ async function getCompat<T>(attempts: RequestAttempt[]): Promise<T> {
 
   if (lastNotFound) {
     throw new Error(`Directory API error ${lastNotFound.status} on ${lastNotFound.path}: ${lastNotFound.body}`)
+  }
+  if (lastAnonymousMcpAuthFailure) {
+    throw new Error(
+      `Directory API auth failed ${lastAnonymousMcpAuthFailure.status} on ${lastAnonymousMcpAuthFailure.path}, and no public fallback succeeded.`
+    )
   }
   throw new Error('Directory API error: no compatible endpoint attempts were configured')
 }

@@ -26,17 +26,24 @@ export interface ToolDef<Shape extends Record<string, z.ZodTypeAny>> {
   execute: (input: z.infer<z.ZodObject<Shape>>) => Promise<unknown>
 }
 
+const taxonomyToken = z.string()
+  .trim()
+  .min(1)
+  .max(80)
+  .transform((value) => value.toLowerCase().replace(/[\s_]+/g, '-'))
+  .refine(
+    (value) => /^[a-z0-9][a-z0-9-]*$/.test(value),
+    'Use a taxonomy token such as testing-lab, 3d-printing, grant, investor, or component-supplier'
+  )
+
 // ─── search_resources ─────────────────────────────────────────────────────────
 
 const searchResourcesShape = {
   query: z.string().optional().describe('Free-text search query'),
   q: z.string().optional().describe('Compatibility alias for query'),
-  resource_type: z.enum([
-    'makerspace', 'fablab', 'testing-lab', 'govt-lab', 'university-lab',
-    'pcb-fab', 'component-supplier', 'certification-consultant',
-    'hardware-accelerator', 'tool-rental', 'co-working', 'other',
-  ]).optional().describe('Filter by resource type'),
-  type: z.string().optional().describe('Compatibility alias for resource_type'),
+  resource_type: taxonomyToken.optional()
+    .describe('Filter by live resource taxonomy token. Examples: testing-lab, 3d-printing, prototyping-lab, grant, investor, component-supplier. Use get_platform_stats/list_resource_types to discover current values.'),
+  type: taxonomyToken.optional().describe('Compatibility alias for resource_type'),
   category: z.string().optional().describe('Filter by category tag'),
   city: z.string().optional().describe('Filter by city name'),
   limit: z.number().int().min(1).max(50).optional().describe('Compatibility alias for max_results'),
@@ -215,6 +222,7 @@ export const listSkills: ToolDef<typeof listSkillsShape> = {
     const isFirstParty = (s: { source_author?: string; id?: string }) => {
       const author = String(s.source_author ?? 'Maker Express').trim().toLowerCase()
       if (author === 'makerhub' || author === 'maker express' || author === 'hardstack') return true
+      if (author) return false
       return !String(s.id ?? '').startsWith('cadskills-')
     }
     const getSecurityStatus = (s: { source_author?: string; id?: string; audit?: { overall?: string } }) => {

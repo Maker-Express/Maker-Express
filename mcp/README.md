@@ -82,6 +82,12 @@ HARDWARE_DIRECTORY_API_URL=https://api.maker.express npm run smoke:prod
 
 The smoke test verifies that all tools are registered and can optionally call the live API. It retries 429 responses before failing so production health checks do not become flaky under short bursts.
 
+## API Compatibility Rules
+
+- `resource_type` accepts a bounded taxonomy token rather than a hardcoded enum. Use `get_platform_stats` or `list_resource_types` to discover current values such as `testing-lab`, `3d-printing`, `grant`, `investor`, or `component-supplier`.
+- The client tries `/mcp/*` first, then public read-only `/v1/*` and `/api/v1/*` fallbacks where safe.
+- If API or service credentials are configured and `/mcp/*` returns `401` or `403`, the client fails closed instead of silently downgrading to public routes.
+
 ## Security
 
 - Reads secrets only from environment variables.

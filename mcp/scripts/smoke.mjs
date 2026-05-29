@@ -61,6 +61,17 @@ function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms))
 }
 
+function resultCount(payload) {
+  return Number(
+    payload?.count ??
+    payload?.total ??
+    (Array.isArray(payload?.data) ? payload.data.length : undefined) ??
+    (Array.isArray(payload?.resources) ? payload.resources.length : undefined) ??
+    (Array.isArray(payload?.results) ? payload.results.length : undefined) ??
+    0
+  )
+}
+
 async function callToolWithRetry(client, request, retries = 3) {
   let lastResult = null
   for (let attempt = 0; attempt <= retries; attempt += 1) {
@@ -127,6 +138,11 @@ async function main() {
       tools: names,
       statsProbe: null,
       searchProbe: null,
+      typedSearchProbe: null,
+      skillsProbe: null,
+      thirdPartySkillsProbe: null,
+      suggestSkillsProbe: null,
+      githubResourcesProbe: null,
       serverStderr: stderrLines.slice(-4),
     }
 
@@ -150,15 +166,75 @@ async function main() {
         throw new Error(`search_resources probe failed: ${message}`)
       }
       summary.searchProbe = parseToolText(searchProbe) ?? searchProbe
-      const searchCount = Number(
-        summary.searchProbe?.count ??
-        summary.searchProbe?.total ??
-        (Array.isArray(summary.searchProbe?.data) ? summary.searchProbe.data.length : undefined) ??
-        (Array.isArray(summary.searchProbe?.results) ? summary.searchProbe.results.length : undefined) ??
-        0
-      )
+      const searchCount = resultCount(summary.searchProbe)
       if (!Number.isFinite(searchCount) || searchCount < 1) {
         throw new Error('search_resources probe returned no results for Mekuva fixture')
+      }
+
+      const typedSearchProbe = await callToolWithRetry(client, {
+        name: 'search_resources',
+        arguments: { resource_type: '3d-printing', max_results: 3 },
+      })
+      if (typedSearchProbe?.isError) {
+        const message = typedSearchProbe.content?.find((entry) => entry?.type === 'text')?.text ?? 'unknown tool error'
+        throw new Error(`search_resources typed probe failed: ${message}`)
+      }
+      summary.typedSearchProbe = parseToolText(typedSearchProbe) ?? typedSearchProbe
+      const typedSearchCount = resultCount(summary.typedSearchProbe)
+      if (!Number.isFinite(typedSearchCount) || typedSearchCount < 1) {
+        throw new Error('search_resources typed probe returned no results for 3d-printing fixture')
+      }
+
+      const skillsProbe = await callToolWithRetry(client, {
+        name: 'list_skills',
+        arguments: { source: 'all', security_status: 'all' },
+      })
+      if (skillsProbe?.isError) {
+        const message = skillsProbe.content?.find((entry) => entry?.type === 'text')?.text ?? 'unknown tool error'
+        throw new Error(`list_skills probe failed: ${message}`)
+      }
+      summary.skillsProbe = parseToolText(skillsProbe) ?? skillsProbe
+      if (Number(summary.skillsProbe?.total ?? 0) < 39) {
+        throw new Error(`list_skills probe returned too few skills: ${summary.skillsProbe?.total ?? 'unknown'}`)
+      }
+
+      const thirdPartySkillsProbe = await callToolWithRetry(client, {
+        name: 'list_skills',
+        arguments: { source: 'third-party', security_status: 'third-party-verified' },
+      })
+      if (thirdPartySkillsProbe?.isError) {
+        const message = thirdPartySkillsProbe.content?.find((entry) => entry?.type === 'text')?.text ?? 'unknown tool error'
+        throw new Error(`list_skills third-party probe failed: ${message}`)
+      }
+      summary.thirdPartySkillsProbe = parseToolText(thirdPartySkillsProbe) ?? thirdPartySkillsProbe
+      if (Number(summary.thirdPartySkillsProbe?.total ?? 0) < 7) {
+        throw new Error(`third-party list_skills probe returned too few skills: ${summary.thirdPartySkillsProbe?.total ?? 'unknown'}`)
+      }
+
+      const suggestSkillsProbe = await callToolWithRetry(client, {
+        name: 'suggest_skills',
+        arguments: { task: 'prepare firmware bringup and EMC precompliance for a 3D printer controller', agent_type: 'codex' },
+      })
+      if (suggestSkillsProbe?.isError) {
+        const message = suggestSkillsProbe.content?.find((entry) => entry?.type === 'text')?.text ?? 'unknown tool error'
+        throw new Error(`suggest_skills probe failed: ${message}`)
+      }
+      summary.suggestSkillsProbe = parseToolText(suggestSkillsProbe) ?? suggestSkillsProbe
+      if (!Array.isArray(summary.suggestSkillsProbe?.suggestions) || summary.suggestSkillsProbe.suggestions.length < 1) {
+        throw new Error('suggest_skills probe returned no suggestions')
+      }
+
+      const githubResourcesProbe = await callToolWithRetry(client, {
+        name: 'list_github_resources',
+        arguments: { domain: 'all', type: 'all', max_results: 60 },
+      })
+      if (githubResourcesProbe?.isError) {
+        const message = githubResourcesProbe.content?.find((entry) => entry?.type === 'text')?.text ?? 'unknown tool error'
+        throw new Error(`list_github_resources probe failed: ${message}`)
+      }
+      summary.githubResourcesProbe = parseToolText(githubResourcesProbe) ?? githubResourcesProbe
+      if (Number(summary.githubResourcesProbe?.total ?? 0) < 50) {
+        throw new Error(`list_github_resources probe returned too few resources: ${summary.githubResourcesProbe?.total ?? 'unknown'}`)
       }
     }
 
